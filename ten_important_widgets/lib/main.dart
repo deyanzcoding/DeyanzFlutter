@@ -14,37 +14,94 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          // backgroundColor: Colors.red.shade200,
+          backgroundColor: Colors.greenAccent,
           title: Center(
             child: Text(
-              'ListTile Widget',
-              style: TextStyle(fontSize: 20, color: Colors.black),
+              '10 important widgets',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
             ),
           ),
         ),
 
-        body:Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        body: Column(
           children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: 100,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    leading: CircleAvatar(
-                      radius: 30,
-                      backgroundImage: NetworkImage('https://media.licdn.com/dms/image/v2/D4D03AQGGpbMoMJYdTA/profile-displayphoto-shrink_200_200/B4DZXGiL01HkAc-/0/1742792606212?e=1758758400&v=beta&t=FntdHCm8jOnKMSd4Zc1-4v0cw0Ja1FbPY4RGScW6hx4'),
-                    ),
+            Container(
+              width: double.infinity,
+              height: 350,
+              padding: EdgeInsets.only(left: 15, top: 15),
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.topRight,
+                  colors: [Colors.greenAccent.shade100, Colors.white60],
+                ),
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(width: 1.5, color: Colors.black45),
+                boxShadow: [
+                  BoxShadow(
+                    spreadRadius: 7,
+                    blurRadius: 20,
+                    color: Colors.red.shade200,
+                  ),
+                ],
+              ),
+              // transform: Matrix4.rotationZ(0.04),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Top widgets that helps to build any kind of a API :'),
+                  SizedBox(height: 10),
+                  Text('1) Container widget ', style: TextStyle(fontSize: 18)),
+                  Text('2) Expanded widget ', style: TextStyle(fontSize: 18)),
+                  Text('3) ListTile widget ', style: TextStyle(fontSize: 18)),
+                  Text(
+                    '4) CircleAvatar widget ',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Text('5) Stacks widget ', style: TextStyle(fontSize: 18)),
+                  Text('6) RichText widget ', style: TextStyle(fontSize: 18)),
+                  Text('7) SizedBox widget ', style: TextStyle(fontSize: 18)),
+                  Text('8) Divider widget ', style: TextStyle(fontSize: 18)),
+                  Text(
+                    '9) Padding & Align widget ',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Text('10) Image widget ', style: TextStyle(fontSize: 18)),
+                ],
+              ),
+            ),
 
-                    title: Text('Deyan Ahmad'),
-                    subtitle: Text('Android & Ios developer'),
-                    trailing: Text('4:36 PM'),
-                  );
-                },
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: TextStyle(fontSize: 18, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: 'Thank you, ',
+                    style: TextStyle(fontWeight: FontWeight.w200, fontSize: 17),
+                  ),
+                  TextSpan(
+                    text: 'Asif Taj sir, ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black54,
+                      fontSize: 20,
+                    ),
+                  ),
+                  TextSpan(
+                    text: '\nFor teaching flutter in easyiest way..., ',
+                    style: TextStyle(fontWeight: FontWeight.w200, fontSize: 17),
+                  ),
+                ],
               ),
             ),
           ],
-        )
+        ),
       ),
     );
   }
@@ -166,6 +223,9 @@ class MyApp extends StatelessWidget {
 //   ],
 // ),
 
+
+
+
 // [3] --Expanded Widget
 // Column(
 // mainAxisAlignment: MainAxisAlignment.center,
@@ -229,6 +289,9 @@ class MyApp extends StatelessWidget {
 // ],
 // )
 
+
+
+
 //[4] --Divider, VerticalDivider
 // Divider(
 // color: Colors.black,
@@ -246,6 +309,9 @@ class MyApp extends StatelessWidget {
 // color: Colors.black,
 // thickness: 2.5,
 // ),
+
+
+
 
 // [5] --CircleAvatar
 // Column(
@@ -272,12 +338,12 @@ class MyApp extends StatelessWidget {
 // ],
 // )
 
-// [6] --RichText
+// [6] -- RichText
 // Column(
 // mainAxisAlignment: MainAxisAlignment.center,
 // children: [
 // Center(
-// child: RichText(text: TextSpan(text: 'Don\'t have any account?   ',
+// child: RichText(text: sn(text: 'Don\'t have any account?   ',
 // style: Theme.of(context).textTheme.bodyMedium,
 // children: [
 // TextSpan(text: 'Sign Up, ', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24)),
@@ -287,7 +353,6 @@ class MyApp extends StatelessWidget {
 // )
 // ],
 // )
-
 
 // [7] --TextFormField
 // Column(
@@ -337,8 +402,6 @@ class MyApp extends StatelessWidget {
 // borderSide:   BorderSide(color: Colors.red, width: 3),
 // ),
 //
-//
-//
 // labelText: 'Email',
 // labelStyle: TextStyle(
 // color: Colors.black38,
@@ -355,3 +418,103 @@ class MyApp extends StatelessWidget {
 // ],
 // ),
 
+// [8, 9] --ListTile & ListView
+// Column(
+// mainAxisAlignment: MainAxisAlignment.center,
+// children: [
+// Expanded(
+// child: ListView.builder(
+// itemCount: 100,
+// itemBuilder: (context, index) {
+// return ListTile(
+// leading: CircleAvatar(
+// radius: 30,
+// backgroundImage: NetworkImage('https://media.licdn.com/dms/image/v2/D4D03AQGGpbMoMJYdTA/profile-displayphoto-shrink_200_200/B4DZXGiL01HkAc-/0/1742792606212?e=1758758400&v=beta&t=FntdHCm8jOnKMSd4Zc1-4v0cw0Ja1FbPY4RGScW6hx4'),
+// ),
+//
+// title: Text('Deyan Ahmad'),
+// subtitle: Text('Android & Ios developer'),
+// trailing: Text('4:36 PM'),
+// );
+// },
+// ),
+// ),
+// ],
+// )
+
+// [-] making 10 important widgets.
+// Column(
+// children: [
+// Container(
+// width: double.infinity,
+// height: 350,
+// padding: EdgeInsets.only(left: 15, top: 15),
+// margin: EdgeInsets.all(20),
+// decoration: BoxDecoration(
+// gradient: LinearGradient(
+// begin: Alignment.topLeft,
+// end: Alignment.topRight,
+// colors: [Colors.greenAccent.shade100, Colors.white60],
+// ),
+// borderRadius: BorderRadius.circular(15),
+// border: Border.all(width: 1.5, color: Colors.black45),
+// boxShadow: [
+// BoxShadow(
+// spreadRadius: 7,
+// blurRadius: 20,
+// color: Colors.red.shade200,
+// ),
+// ],
+// ),
+// // transform: Matrix4.rotationZ(0.04),
+// child: Column(
+// crossAxisAlignment: CrossAxisAlignment.start,
+// children: [
+// Text('Top widgets that helps to build any kind of a API :'),
+// SizedBox(height: 10),
+// Text('1) Container widget ', style: TextStyle(fontSize: 18)),
+// Text('2) Expanded widget ', style: TextStyle(fontSize: 18)),
+// Text('3) ListTile widget ', style: TextStyle(fontSize: 18)),
+// Text(
+// '4) CircleAvatar widget ',
+// style: TextStyle(fontSize: 18),
+// ),
+// Text('5) Stacks widget ', style: TextStyle(fontSize: 18)),
+// Text('6) RichText widget ', style: TextStyle(fontSize: 18)),
+// Text('7) SizedBox widget ', style: TextStyle(fontSize: 18)),
+// Text('8) Divider widget ', style: TextStyle(fontSize: 18)),
+// Text(
+// '9) Padding & Align widget ',
+// style: TextStyle(fontSize: 18),
+// ),
+// Text('10) Image widget ', style: TextStyle(fontSize: 18)),
+// ],
+// ),
+// ),
+//
+// RichText(
+// textAlign: TextAlign.center,
+// text: TextSpan(
+// style: TextStyle(fontSize: 18, color: Colors.black),
+// children: [
+// TextSpan(
+// text: 'Thank you, ',
+// style: TextStyle(fontWeight: FontWeight.w200, fontSize: 17),
+// ),
+// TextSpan(
+// text: 'Asif Taj sir, ',
+// style: TextStyle(
+// fontWeight: FontWeight.w500,
+// color: Colors.black54,
+// fontSize: 20,
+// ),
+// ),
+// TextSpan(
+// text: '\nFor teaching flutter in easyiest way..., ',
+// style: TextStyle(fontWeight: FontWeight.w200, fontSize: 17),
+// ),
+// ],
+// ),
+// ),
+// ],
+// ),
