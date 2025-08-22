@@ -17,72 +17,34 @@ class MyApp extends StatelessWidget {
           // backgroundColor: Colors.red.shade200,
           title: Center(
             child: Text(
-              'Ten Importand Widgets',
+              'ListTile Widget',
               style: TextStyle(fontSize: 20, color: Colors.black),
             ),
           ),
         ),
 
-        body: Column(
+        body:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                cursorColor: Colors.pink,
-                cursorHeight: 30,
-                cursorWidth: 5,
-                enabled: true,
-                style: TextStyle(fontSize: 18, color: Colors.deepPurpleAccent),
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.alternate_email),
-                  prefixIconColor: Colors.amber.shade400,
+            Expanded(
+              child: ListView.builder(
+                itemCount: 100,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    leading: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: NetworkImage('https://media.licdn.com/dms/image/v2/D4D03AQGGpbMoMJYdTA/profile-displayphoto-shrink_200_200/B4DZXGiL01HkAc-/0/1742792606212?e=1758758400&v=beta&t=FntdHCm8jOnKMSd4Zc1-4v0cw0Ja1FbPY4RGScW6hx4'),
+                    ),
 
-                  // prefixText: 'What is your deyan',
-                  suffixIcon: Icon(Icons.email),
-                  suffixText: 'DM',
-                  suffixIconColor: Colors.purple.shade300,
-                  suffixStyle: TextStyle(
-                    color: Colors.black26,
-                    backgroundColor: Colors.blue.shade200,
-                  ),
-                  // icon: Icon(Icons.email),
-                  filled: true,
-                  fillColor: Colors.grey.shade300,
-                  hintText: 'Email',
-                  hintStyle: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey.shade600,
-                  ),
-
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.teal, width: 2),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.teal, width: 2),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderSide:   BorderSide(color: Colors.red, width: 3),
-                  ),
-                  
-
-                  labelText: 'Email',
-                  labelStyle: TextStyle(
-                    color: Colors.black38,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-                onChanged: (value) {
-                  print(value);
+                    title: Text('Deyan Ahmad'),
+                    subtitle: Text('Android & Ios developer'),
+                    trailing: Text('4:36 PM'),
+                  );
                 },
               ),
             ),
           ],
-        ),
+        )
       ),
     );
   }
@@ -325,3 +287,71 @@ class MyApp extends StatelessWidget {
 // )
 // ],
 // )
+
+
+// [7] --TextFormField
+// Column(
+// mainAxisAlignment: MainAxisAlignment.center,
+// children: [
+// Padding(
+// padding: const EdgeInsets.all(8.0),
+// child: TextFormField(
+// keyboardType: TextInputType.emailAddress,
+// cursorColor: Colors.pink,
+// cursorHeight: 30,
+// cursorWidth: 5,
+//
+// enabled: true,
+// style: TextStyle(fontSize: 18, color: Colors.deepPurpleAccent),
+// decoration: InputDecoration(
+// prefixIcon: Icon(Icons.alternate_email),
+// prefixIconColor: Colors.amber.shade400,
+//
+// // prefixText: 'What is your deyan',
+// suffixIcon: Icon(Icons.email),
+// suffixText: 'DM',
+// suffixIconColor: Colors.purple.shade300,
+// suffixStyle: TextStyle(
+// color: Colors.black26,
+// backgroundColor: Colors.blue.shade200,
+// ),
+// // icon: Icon(Icons.email),
+// filled: true,
+// fillColor: Colors.grey.shade300,
+// hintText: 'Email',
+// helperText: 'enter your personal email only.',
+//
+// hintStyle: TextStyle(
+// fontSize: 14,
+// color: Colors.grey.shade600,
+// ),
+//
+// enabledBorder: OutlineInputBorder(
+// borderSide: BorderSide(color: Colors.teal, width: 2),
+// ),
+// focusedBorder: UnderlineInputBorder(
+// borderSide: BorderSide(color: Colors.teal, width: 5),
+// borderRadius: BorderRadius.circular(20),
+// ),
+// errorBorder: OutlineInputBorder(
+// borderSide:   BorderSide(color: Colors.red, width: 3),
+// ),
+//
+//
+//
+// labelText: 'Email',
+// labelStyle: TextStyle(
+// color: Colors.black38,
+// fontSize: 18,
+// fontWeight: FontWeight.w600,
+// fontStyle: FontStyle.italic,
+// ),
+// ),
+// onChanged: (value) {
+// print(value);
+// },
+// ),
+// ),
+// ],
+// ),
+
