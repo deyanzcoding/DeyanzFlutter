@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,14 +23,70 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-          body:
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                cursorColor: Colors.pink,
+                cursorHeight: 30,
+                cursorWidth: 5,
+                enabled: true,
+                style: TextStyle(fontSize: 18, color: Colors.deepPurpleAccent),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.alternate_email),
+                  prefixIconColor: Colors.amber.shade400,
 
+                  // prefixText: 'What is your deyan',
+                  suffixIcon: Icon(Icons.email),
+                  suffixText: 'DM',
+                  suffixIconColor: Colors.purple.shade300,
+                  suffixStyle: TextStyle(
+                    color: Colors.black26,
+                    backgroundColor: Colors.blue.shade200,
+                  ),
+                  // icon: Icon(Icons.email),
+                  filled: true,
+                  fillColor: Colors.grey.shade300,
+                  hintText: 'Email',
+                  hintStyle: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey.shade600,
+                  ),
 
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.teal, width: 2),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.teal, width: 2),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide:   BorderSide(color: Colors.red, width: 3),
+                  ),
+                  
+
+                  labelText: 'Email',
+                  labelStyle: TextStyle(
+                    color: Colors.black38,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+                onChanged: (value) {
+                  print(value);
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
 
 //[1, 2] --Container & Expanded widget.
 //  Column(
@@ -147,7 +204,6 @@ class MyApp extends StatelessWidget {
 //   ],
 // ),
 
-
 // [3] --Expanded Widget
 // Column(
 // mainAxisAlignment: MainAxisAlignment.center,
@@ -211,7 +267,6 @@ class MyApp extends StatelessWidget {
 // ],
 // )
 
-
 //[4] --Divider, VerticalDivider
 // Divider(
 // color: Colors.black,
@@ -229,7 +284,6 @@ class MyApp extends StatelessWidget {
 // color: Colors.black,
 // thickness: 2.5,
 // ),
-
 
 // [5] --CircleAvatar
 // Column(
@@ -255,7 +309,6 @@ class MyApp extends StatelessWidget {
 // )
 // ],
 // )
-
 
 // [6] --RichText
 // Column(
