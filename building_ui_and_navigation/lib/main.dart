@@ -1,3 +1,4 @@
+import 'package:building_ui_and_navigation/add_to_cart.dart';
 import 'package:building_ui_and_navigation/home_screen.dart';
 import 'package:building_ui_and_navigation/screen_three.dart';
 import 'package:building_ui_and_navigation/screen_two.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.id: (context) => HomeScreen(),
         ScreenTwo.id: (context) => ScreenTwo(),
         ScreenThree.id: (context) => ScreenThree(),
+        AddToCart.id: (context) => AddToCart(),
       },
 
     );

@@ -17,21 +17,24 @@ class _ScreenTwoState extends State<ScreenTwo> {
       body: Center(
         child: Column(
           children: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text(' 🔙 Press to move back'),
-            ),
 
-            TextButton(onPressed: () {
-              Navigator.pushNamed(context, ScreenThree.id);
-              
-              //this code is for navigator.push
-              // Navigator.push(context,
-              //     MaterialPageRoute(builder: (context) => ScreenThree()),
-              // );
-            }, child: Text('Goto third screen')),
+            Expanded(
+              child: ListView.builder(
+                 itemCount: 50,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      leading: CircleAvatar(
+                        radius: 25,
+                        backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSR-dez27VzWPTKhNi5kQf-aNDxuBo1LQ1-Q&s'),
+                      ),
+                      title: Text('Deyan Ahmad'),
+                      onTap: () {
+                        Navigator.pushNamed(context, ScreenTwo.id);
+                      },
+                    );
+                  }
+              ),
+            )
           ],
         ),
 
