@@ -1,18 +1,15 @@
-# ten_important_widgets
+# building_ui_and_navigation
 
-A new Flutter project, I learn 10 most important widgets in flutter that are using most in flutter every 
-project, here it is:
-
-1) Container widget
-2) Expanded widget 
-3) ListTile widget 
-4) CircleAvatar widget
-5) Stacks widget 
-6) RichText widget 
-7) SizedBox widget 
-8) Divider widget 
-9) Padding & Align widget
-10) Image widget 
+A new Flutter project, Building UI and understanding deep concpts and Navigation drawer.
+1) Creating Dart classes
+2) AppBar widget
+3) Drawer
+4) Drawer header
+5) Navigation
+6) Side Menu / Drawer of Navigation drawer
+7) Code refactoring
+8) Routing and navigation or moving between screens.
+9) Building small navigation drawer app.
 
 
 ## Getting Started
