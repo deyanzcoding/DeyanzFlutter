@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
               tabs: [
                 Tab(child: Text('Chats')),
                 Tab(child: Text('Updates')),
-                Tab(child: Text('Groups')),
+                Tab(child: Text('Community')),
                 Tab(child: Text('Calls')),
               ],
             ),
@@ -79,7 +79,6 @@ class _MyAppState extends State<MyApp> {
                     subtitle: Text('You reacted ❤️ to "🎙️ 0:36"'),
                     trailing: Text('10:12 AM'),
                   ),
-
                   ListTile(
                     leading: CircleAvatar(
                       radius: 25,
@@ -89,7 +88,15 @@ class _MyAppState extends State<MyApp> {
                     subtitle: Text('Shogaib reacted 😂 to "Sta pa sh..."'),
                     trailing: Text('07:53 AM'),
                   ),
-
+                  ListTile(
+                    leading: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage('assets/images/deyan.jpg'),
+                    ),
+                    title: Text('(You)', style: TextStyle(fontWeight: FontWeight.w500),),
+                    subtitle: Text('Explain container widg...'),
+                    trailing: Text('07:49 AM'),
+                  ),
                   ListTile(
                     leading: CircleAvatar(
                       radius: 25,
@@ -113,6 +120,33 @@ class _MyAppState extends State<MyApp> {
                     subtitle: Text('Da ho Hassnain de sam 😂'),
                     trailing: Text('07:22 AM'),
                   ),
+                  ListTile(
+                    leading: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage('assets/images/hassnain_uni_f.jpeg'),
+                    ),
+                    title: Text('Hassnain Uni F'),
+                    subtitle: Text('You reacted ❤️ to "🎙️ 0:36"'),
+                    trailing: Text('10:12 AM'),
+                  ),
+                  ListTile(
+                    leading: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage('assets/images/shogaib_uni_f.jpeg'),
+                    ),
+                    title: Text('Shogaib Uni F'),
+                    subtitle: Text('Shogaib reacted 😂 to "Sta pa sh..."'),
+                    trailing: Text('07:53 AM'),
+                  ),
+                  ListTile(
+                    leading: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage('assets/images/bilal_uni_f.jpg'),
+                    ),
+                    title: Text('Bilal Uni F'),
+                    subtitle: Text('Da ho Hassnain de sam 😂'),
+                    trailing: Text('07:22 AM'),
+                  ),
                 ],
               ),
 
@@ -124,19 +158,77 @@ class _MyAppState extends State<MyApp> {
                     padding: const EdgeInsets.only(left: 10, top: 5),
                     child: Text('Status', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, ),),
                   ),
+
+                 //[ status boxes ]
                  Row(
                    children: [
+                     // [ first status box ]
                      Padding(
                        padding: const EdgeInsets.only(top: 10, left: 8),
                        child: Container(
                          height: 160,
                          width: 90,
                          decoration: BoxDecoration(
-                           color: Colors.grey.shade300,
+                           color: Colors.grey.shade200,
                            border: Border.all(width: 1.5, color: Colors.grey.shade400),
                            borderRadius: BorderRadius.circular(20),
                          ),
+                      child:Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                                radius: 30,
+                                backgroundImage: AssetImage('assets/images/deyan.jpg'),
+                            ),
 
+                            Padding(padding: const EdgeInsets.only(top: 25),
+                              child: Text('Add\nstatus', style: TextStyle(fontWeight: FontWeight.w500), textAlign: TextAlign.center,),
+                            ),
+                          ],
+                        ),
+                      ),
+                       ),
+                     ),
+
+                     // [ second status box ]
+                     Padding(
+                       padding: const EdgeInsets.only(top: 10, left: 8),
+                       child: Container(
+                         height: 160,
+                         width: 90,
+                         decoration: BoxDecoration(
+                           image: DecorationImage(image: AssetImage('assets/images/deyan_hassnain.jpg')),
+                           color: Colors.grey.shade200,
+                           borderRadius: BorderRadius.circular(20),
+                         ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.green,
+                                    width: 3,
+                                  )
+                                ),
+                                child: CircleAvatar(
+                                  radius: 20,
+                                  foregroundImage: AssetImage('assets/images/hassnain_uni_f.jpeg'),
+                                  backgroundColor: Color(0xff30D237FF),
+                                ),
+                              ),
+
+                              Padding(padding: const EdgeInsets.only(top: 70, right: 17),
+                                child: Text('Hassnain', style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500), textAlign: TextAlign.center,),
+                              ),
+                            ],
+
+                          ),
+                        ),
                        ),
                      ),
                      Padding(
@@ -145,22 +237,29 @@ class _MyAppState extends State<MyApp> {
                          height: 160,
                          width: 90,
                          decoration: BoxDecoration(
-                           color: Colors.grey.shade300,
+                           image: DecorationImage(image: AssetImage('assets/images/deyan_shogaib.jpg')),
+                           color: Colors.grey.shade200,
                            borderRadius: BorderRadius.circular(20),
                          ),
+                         child: Center(
+                           child: Column(
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                               Padding(
+                                 padding: const EdgeInsets.only(right: 35),
+                                 child: CircleAvatar(
+                                   radius: 20,
+                                   foregroundImage: AssetImage('assets/images/shogaib_uni_f.jpeg'),
+                                 ),
+                               ),
 
-                       ),
-                     ),
-                     Padding(
-                       padding: const EdgeInsets.only(top: 10, left: 8),
-                       child: Container(
-                         height: 160,
-                         width: 90,
-                         decoration: BoxDecoration(
-                           color: Colors.grey.shade300,
-                           borderRadius: BorderRadius.circular(20),
+                               Padding(padding: const EdgeInsets.only(top: 70),
+                                 child: Text('Shogaib', style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500), textAlign: TextAlign.center,),
+                               ),
+                             ],
+
+                           ),
                          ),
-
                        ),
                      ),
                    ],
@@ -250,14 +349,168 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
 
+              // [3] -- Communities
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 10, top: 5),
-                    child: Text('Communities', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, ),),
+                    child: Text('Communities', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500, ),),
+                  ),
+                  SizedBox(height: 20,),
+
+                  // [New Community]
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      // borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 8,
+                        )
+                      ]
+                    ),
+                    child: Row(
+                      children: [
+                        Image(image: AssetImage('assets/images/community.png'), height: 80, width: 80,),
+                        Text('New community', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400, )),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+
+
+                  // [1st community]
+                  Container(
+                    height: 80,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        // borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 8,
+                          )
+                        ]
+                    ),
+                    //[ --community name-- ]
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),
+
+                              ),
+                              child: Image(image: AssetImage('assets/images/awkum.jpeg',))),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 12),
+                          child: Text('Awkum updates', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, )),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(height: 1, color: Colors.grey.shade300,),
+
+                  // [ --Announcement-- ]
+                 ListTile(
+                      leading: CircleAvatar(
+                        radius: 25,
+                        backgroundImage: AssetImage('assets/images/announcement.png'),
+                      ),
+                      title: Text('Announcements'),
+                      subtitle: Text('~Ashar Ahmad replied to an...'),
+                      trailing: Text('5:21 AM'),
+                    ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Row(
+                      children: [
+                        Image(image: AssetImage('assets/images/view.png')),
+                        Padding(padding: const EdgeInsets.only(left: 30),
+                          child: Text('View All', style: TextStyle(fontSize: 17, color: Colors.grey.shade600)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Divider(height: 2, color: Colors.grey.shade300,),
+                  SizedBox(height: 20),
+
+
+                  // [2nd community]
+                  Container(
+                    height: 80,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        // borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 10,
+                          )
+                        ]
+                    ),
+                    //[ --community name-- ]
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),
+
+                              ),
+                              child: Image(image: AssetImage('assets/images/gdg.png',))),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 12),
+                          child: Text('GDG Live Pakistan', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, )),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(height: 1, color: Colors.grey.shade300,),
+
+                  // [ --Announcement-- ]
+                  ListTile(
+                    leading: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage('assets/images/announcement.png'),
+                    ),
+                    title: Text('Announcements'),
+                    subtitle: Text('~maqsood Ali joined fro..'),
+                    trailing: Text('8/12/25'),
+                  ),
+                  ListTile(
+                    leading: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage('assets/images/gdg_live.png'),
+                    ),
+                    title: Text('DevFest Pakistan\'24'),
+                    subtitle: Text('+92 348 8888888 joined fro...'),
+                    trailing: Text('9/12/25'),
                   ),
 
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Row(
+                      children: [
+                        Image(image: AssetImage('assets/images/view.png')),
+                        Padding(padding: const EdgeInsets.only(left: 30),
+                          child: Text('View All', style: TextStyle(fontSize: 17, color: Colors.grey.shade600)),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
 
