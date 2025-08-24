@@ -17,8 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
-      home: DefaultTabController(
+     home: DefaultTabController(
         length: 3,
         child: Scaffold(
           appBar: AppBar(
@@ -30,7 +29,9 @@ class _MyAppState extends State<MyApp> {
                 color: Color(0xff25d366),
               ),
             ),
+            bottomOpacity: 0.7,
             bottom: TabBar(
+              labelPadding: EdgeInsets.symmetric(horizontal: 0),
               tabs: [
                 Tab(child: Text('Chats')),
                 Tab(child: Text('Updates')),
@@ -63,7 +64,12 @@ class _MyAppState extends State<MyApp> {
 
               // [1] -- Chats
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, top: 5),
+                    child: Text('Chats', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, ),),
+                  ),
                   ListTile(
                     leading: CircleAvatar(
                       radius: 25,
@@ -110,8 +116,150 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
 
-              Text('Updates'),
-              Text('Communities'),
+              // [2] -- Updates
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, top: 5),
+                    child: Text('Status', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, ),),
+                  ),
+                 Row(
+                   children: [
+                     Padding(
+                       padding: const EdgeInsets.only(top: 10, left: 8),
+                       child: Container(
+                         height: 160,
+                         width: 90,
+                         decoration: BoxDecoration(
+                           color: Colors.grey.shade300,
+                           border: Border.all(width: 1.5, color: Colors.grey.shade400),
+                           borderRadius: BorderRadius.circular(20),
+                         ),
+
+                       ),
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.only(top: 10, left: 8),
+                       child: Container(
+                         height: 160,
+                         width: 90,
+                         decoration: BoxDecoration(
+                           color: Colors.grey.shade300,
+                           borderRadius: BorderRadius.circular(20),
+                         ),
+
+                       ),
+                     ),
+                     Padding(
+                       padding: const EdgeInsets.only(top: 10, left: 8),
+                       child: Container(
+                         height: 160,
+                         width: 90,
+                         decoration: BoxDecoration(
+                           color: Colors.grey.shade300,
+                           borderRadius: BorderRadius.circular(20),
+                         ),
+
+                       ),
+                     ),
+                   ],
+                 ),
+
+                  SizedBox(height: 10,),
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Row(
+                      children: [
+                        Text('Channels', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 160),
+                          child: Container(
+                            height: 25,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade300,
+                              borderRadius: BorderRadius.circular(15)
+                            ),
+                            child: Center(child: Text('Explore', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),)),
+                          ),
+                        ),
+
+
+
+                      ],
+                    ),
+                  ),
+
+                  Column(
+                    children: [
+                      ListTile(
+                        leading: CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage('assets/images/bbc.png'),
+                        ),
+                        title: Text('BBC News Urdu'),
+                        subtitle: Text('محسن نقوی کا یہ بیان ایک ایسے وقت'),
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 30),
+                          child: Text('Yesterday'),
+                        ),
+                      ),
+
+                      ListTile(
+                        leading: CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage('assets/images/whatsapp.png'),
+                        ),
+                        title: Text('Whatsapp'),
+                        subtitle: Text('Appstrology: Virgo (23 August-22...'),
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 30),
+                          child: Text('Yesterday'),
+                        ),
+                      ),
+
+                      ListTile(
+                        leading: CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage('assets/images/flutter_craft.png'),
+                        ),
+                        title: Text('Flutter Craft'),
+                        subtitle: Text('Hey everyone, I\'m Asad Khan, manag...'),
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 30),
+                          child: Text('12/8/2025'),
+                        ),
+                      ),
+                      ListTile(
+                        leading: CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage('assets/images/feelingsad.png', ),
+                        ),
+                        title: Text('Feeling Sad'),
+                        subtitle: Text('ہمیشہ دیر کر دیتا ہوں میں '),
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 30),
+                          child: Text('12/8/2025'),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                ],
+              ),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, top: 5),
+                    child: Text('Communities', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, ),),
+                  ),
+
+                ],
+              ),
 
 
 
