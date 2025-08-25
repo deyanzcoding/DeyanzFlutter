@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,33 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.red),
+        appBar: AppBar(backgroundColor: Colors.red,
+        actions: [
+          badges.Badge(
+            badgeContent: Text('3'),
+            badgeAnimation: badges.BadgeAnimation.fade(
+              animationDuration: Duration(seconds: 1),
+              colorChangeAnimationDuration: Duration(seconds: 1),
+              loopAnimation: false,
+              curve: Curves.fastOutSlowIn,
+              colorChangeAnimationCurve: Curves.easeInCubic,
+            ),
+            badgeStyle: badges.BadgeStyle(
+              shape: badges.BadgeShape.circle,
+              badgeColor: Colors.blue,
+              // borderSide: BorderSide(color: Colors.black, width: 5),
+              // borderGradient: badges.BadgeGradient.linear(
+              //   colors: [Colors.red, Colors.yellow],
+              //   begin: Alignment.topLeft,
+              //   end: Alignment.topRight,
+              // ),
+              elevation: 0,
+            ),
+            child: Icon(FontAwesomeIcons.cartShopping),
+          ),
+          SizedBox(width: 30,),
+        ],
+        ),
 
         body: SingleChildScrollView(
           child: Column(
@@ -44,9 +71,10 @@ class _MyAppState extends State<MyApp> {
                 lessStyle: TextStyle(color: Colors.red, fontSize: 10),
                 style: TextStyle(color: Colors.black38),
               ),
+              SizedBox(height: 30,),
               badges.Badge(
-                badgeContent: Icon(Icons.check, color: Colors.white, size: 50, ),
-                badgeAnimation: badges.BadgeAnimation.rotation(
+                badgeContent: Icon(Icons.check, color: Colors.white, size: 8, ),
+                badgeAnimation: badges.BadgeAnimation.fade(
                     animationDuration: Duration(seconds: 1),
                     colorChangeAnimationDuration: Duration(seconds: 1),
                   loopAnimation: false,
@@ -54,21 +82,57 @@ class _MyAppState extends State<MyApp> {
                   colorChangeAnimationCurve: Curves.easeInCubic,
                 ),
                 badgeStyle: badges.BadgeStyle(
-                  shape: badges.BadgeShape.instagram,
+                  shape: badges.BadgeShape.circle,
                   badgeColor: Colors.blue,
-                  borderSide: BorderSide(color: Colors.black, width: 5),
-                  borderGradient: badges.BadgeGradient.linear(
-                    colors: [Colors.red, Colors.yellow],
-                    begin: Alignment.topLeft,
-                    end: Alignment.topRight,
-                  ),
+                  // borderSide: BorderSide(color: Colors.black, width: 5),
+                  // borderGradient: badges.BadgeGradient.linear(
+                  //   colors: [Colors.red, Colors.yellow],
+                  //   begin: Alignment.topLeft,
+                  //   end: Alignment.topRight,
+                  // ),
                   elevation: 0,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 50,),
-                  child: Text('Badge', style: TextStyle(color: Colors.blue, fontSize: 30),),
-                ),
+                child: Icon(FontAwesomeIcons.cartShopping),
               ),
+
+              SizedBox(height: 30,),
+
+              AnimatedTextKit(
+                animatedTexts: [
+                  TyperAnimatedText(
+                    'TyperAnimatedText',
+                    textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.purple),
+                    speed: Duration(milliseconds: 500),
+                  ),
+                ],
+
+                totalRepeatCount: 4,
+                pause: Duration(milliseconds: 200),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+              ),
+
+              SizedBox(height: 30,),
+
+              AnimatedTextKit(animatedTexts: [
+                TypewriterAnimatedText('TypewriterAnimatedText', textStyle:  TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.lightBlue))
+              ]),
+
+              SizedBox(height: 30,),
+
+
+              AnimatedTextKit(animatedTexts: [
+                ScaleAnimatedText('ScaleAnimatedText', textStyle:  TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.lightBlue))
+              ]),
+
+              SizedBox(height: 30,),
+
+              AnimatedTextKit(animatedTexts: [
+                RotateAnimatedText('RotateAnimatedText', textStyle:  TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.lightBlue))
+              ]),
+
+              SizedBox(height: 30,),
+              
 
 
             ],
