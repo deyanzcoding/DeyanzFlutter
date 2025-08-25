@@ -1,3 +1,4 @@
+import 'package:pinput/pinput.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/cupertino.dart';
@@ -132,7 +133,20 @@ class _MyAppState extends State<MyApp> {
               ]),
 
               SizedBox(height: 30,),
-              
+          SizedBox(
+            width: 250.0,
+            child: TextLiquidFill(
+              text: 'Manoo',
+              waveColor: Colors.blueAccent,
+              boxBackgroundColor: Colors.redAccent,
+              textStyle: TextStyle(
+                fontSize: 65.0,
+                fontWeight: FontWeight.bold,
+              ),
+              boxHeight: 250.0,
+            ),
+          ),
+
 
 
             ],
