@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
         height: double.infinity,
         fit: BoxFit.fitHeight,
         image: NetworkImage(
-          'https://images.pexels.com/photos/33400608/pexels-photo-33400608.jpeg',
+          'https://images.pexels.com/photos/14408339/pexels-photo-14408339.jpeg',
         ),
       ),
     );

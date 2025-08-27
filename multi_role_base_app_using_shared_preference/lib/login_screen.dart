@@ -17,6 +17,11 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Image(image: NetworkImage('https://images.pexels.com/photos/14408339/pexels-photo-14408339.jpeg')),
+            SizedBox(
+              height: 10,
+            ),
+
             InkWell(
               onTap: () {
                 asifTaj();
@@ -26,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 color: Colors.grey,
                 child: Center(
-                  child: Text('Click'),
+                  child: Text('Explore'),
                 ),
               ),
             )
