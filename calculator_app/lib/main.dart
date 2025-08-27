@@ -35,7 +35,6 @@ class _MyAppState extends State<MyApp> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 30),
-                        
                         child: Text(
                           userInput.isEmpty ? '0' : userInput,
                           style: const TextStyle(fontSize: 40, color: Colors.white),
