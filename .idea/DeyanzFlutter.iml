@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/building_ui_and_navigation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/building_ui_and_navigation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/building_ui_and_navigation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/calculator_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/calculator_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/calculator_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/first_practice_project/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/first_practice_project/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/first_practice_project/build" />
+      <excludeFolder url="file://$MODULE_DIR$/login_page/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/login_page/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/login_page/build" />
+      <excludeFolder url="file://$MODULE_DIR$/lottery_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/lottery_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/lottery_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/multi_role_base_app_using_shared_preference/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/multi_role_base_app_using_shared_preference/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/multi_role_base_app_using_shared_preference/build" />
+      <excludeFolder url="file://$MODULE_DIR$/pub_dot_dev/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/pub_dot_dev/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/pub_dot_dev/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ten_important_widgets/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ten_important_widgets/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ten_important_widgets/build" />
+      <excludeFolder url="file://$MODULE_DIR$/whatsapp_clone/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/whatsapp_clone/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/whatsapp_clone/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
