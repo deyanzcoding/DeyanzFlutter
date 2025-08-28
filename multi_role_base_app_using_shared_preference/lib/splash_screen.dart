@@ -23,6 +23,22 @@ class _SplashScreenState extends State<SplashScreen> {
    });
  }
 
+ void isLogin() async {
+   SharedPreferences sp = await SharedPreferences.getInstance();
+   bool isLogin = sp.getBool('isLogin') ?? false;
+
+   if(isLogin) {
+      Timer(Duration(seconds: 3), () {
+        Navigator.push(context,
+          MaterialPageRoute(builder: (context) => LoginScreen()));     
+      });
+   } else {
+     Timer(Duration(seconds: 3), () {
+       Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+     });
+   }
+ }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
