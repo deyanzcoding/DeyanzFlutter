@@ -1,6 +1,6 @@
 # first_practice_project
 
-A new Flutter project.
+A new Flutter project, all practice on topics include in this project.
 
 ## Getting Started
 
