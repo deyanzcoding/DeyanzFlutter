@@ -4,7 +4,8 @@ import 'package:navigation_routing_chp_11/main.dart';
 import 'package:navigation_routing_chp_11/screen_two.dart';
 
 class ScreenThree extends StatefulWidget {
-  const ScreenThree({super.key});
+  final int age;
+  const ScreenThree({super.key, required this.age});
 
   @override
   State<ScreenThree> createState() => _ScreenThreeState();
@@ -25,6 +26,7 @@ class _ScreenThreeState extends State<ScreenThree> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Text(widget.age.toString()),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12),
             child: InkWell(

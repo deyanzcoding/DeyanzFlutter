@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:navigation_routing_chp_11/screen_three.dart';
 
 class ScreenTwo extends StatefulWidget {
-  const ScreenTwo({super.key});
+  final String name;
+
+  const ScreenTwo({super.key, required this.name});
 
   @override
   State<ScreenTwo> createState() => _ScreenTwoState();
@@ -23,12 +25,15 @@ class _ScreenTwoState extends State<ScreenTwo> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Text(widget.name),
+          SizedBox(height: 20,),
+
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12),
             child: InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ScreenThree()));
+                    MaterialPageRoute(builder: (context) => ScreenThree(age: 20,)));
               },
               child: Container(
                 height: 50,
