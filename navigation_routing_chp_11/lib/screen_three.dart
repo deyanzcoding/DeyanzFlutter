@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_routing_chp_11/home_screen.dart';
 import 'package:navigation_routing_chp_11/main.dart';
+import 'package:navigation_routing_chp_11/screen_four.dart';
 import 'package:navigation_routing_chp_11/screen_two.dart';
 
 class ScreenThree extends StatefulWidget {
+  static const String id = 'screen_three';
+
+  final String name;
   final int age;
-  const ScreenThree({super.key, required this.age});
+  const ScreenThree({super.key, this.name='', this.age=0});
 
   @override
   State<ScreenThree> createState() => _ScreenThreeState();
@@ -14,6 +18,7 @@ class ScreenThree extends StatefulWidget {
 class _ScreenThreeState extends State<ScreenThree> {
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
         title: Text('Screen 3'),
@@ -26,13 +31,15 @@ class _ScreenThreeState extends State<ScreenThree> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(widget.age.toString()),
+          Text(arguments.toString()),
+          Text('GPA: ' + arguments['gpa']),
+          Text('University : ' + arguments['uni']),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12),
             child: InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyApp()
+                    MaterialPageRoute(builder: (context) => ScreenFour()
                 ));
                 },
               child: Container(

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:navigation_routing_chp_11/screen_three.dart';
 
 class ScreenTwo extends StatefulWidget {
-  final String name;
+  static const String id = 'screen_two';
 
-  const ScreenTwo({super.key, required this.name});
+  // final String name;
+  const ScreenTwo({super.key});
 
   @override
   State<ScreenTwo> createState() => _ScreenTwoState();
@@ -13,6 +14,7 @@ class ScreenTwo extends StatefulWidget {
 class _ScreenTwoState extends State<ScreenTwo> {
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -25,15 +27,23 @@ class _ScreenTwoState extends State<ScreenTwo> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(widget.name),
-          SizedBox(height: 20,),
+          Text(arguments.toString()),
+          Text('Name: ' + arguments['name']),
+          Text('Age: ' + arguments['age']),
+
+          SizedBox(height: 10,),
 
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12),
             child: InkWell(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ScreenThree(age: 20,)));
+              Navigator.pushNamed(context, ScreenThree.id,
+              arguments: {
+                'gpa': '3.41',
+                'uni': 'awkum',
+              }
+              );
+
               },
               child: Container(
                 height: 50,
