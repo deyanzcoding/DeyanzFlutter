@@ -4,6 +4,8 @@ import 'package:navigation_routing_chp_11/screen_five.dart';
 import 'package:navigation_routing_chp_11/screen_four.dart';
 import 'package:navigation_routing_chp_11/screen_three.dart';
 import 'package:navigation_routing_chp_11/screen_two.dart';
+import 'package:navigation_routing_chp_11/utils/routes.dart';
+import 'package:navigation_routing_chp_11/utils/routes_names.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,6 +25,8 @@ class _MyAppState extends State<MyApp> {
       title: 'Main Screen',
       theme: ThemeData(primarySwatch: Colors.blue),
 
+      initialRoute: RouteName.homeScreen,
+      onGenerateRoute: Routes.generateRoute,
 
       //Navigation through id
       // initialRoute: HomeScreen.id,

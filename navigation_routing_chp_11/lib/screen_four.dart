@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:navigation_routing_chp_11/home_screen.dart';
 import 'package:navigation_routing_chp_11/main.dart';
 import 'package:navigation_routing_chp_11/screen_five.dart';
+import 'package:navigation_routing_chp_11/utils/routes_names.dart';
 
 class ScreenFour extends StatefulWidget {
   const ScreenFour({super.key});
@@ -28,6 +29,8 @@ class _ScreenFourState extends State<ScreenFour> {
           Padding(padding: EdgeInsets.symmetric(horizontal: 10),
             child: InkWell(
               onDoubleTap: () {
+                Navigator.pushNamed(context, RouteName.screenFive);
+
 
                 //Navigation through id
                 // Navigator.pushNamed(context, ScreenFive.id);

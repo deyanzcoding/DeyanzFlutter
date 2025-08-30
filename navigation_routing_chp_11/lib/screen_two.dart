@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_routing_chp_11/screen_three.dart';
+import 'package:navigation_routing_chp_11/utils/routes_names.dart';
 
 class ScreenTwo extends StatefulWidget {
   // static const String id = 'screen_two';
@@ -14,7 +15,7 @@ class ScreenTwo extends StatefulWidget {
 class _ScreenTwoState extends State<ScreenTwo> {
   @override
   Widget build(BuildContext context) {
-    final arguments = ModalRoute.of(context)!.settings.arguments as Map;
+    // final arguments = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -39,7 +40,8 @@ class _ScreenTwoState extends State<ScreenTwo> {
             padding: EdgeInsets.symmetric(horizontal: 12),
             child: InkWell(
               onTap: () {
-
+              //Navigation through 3rd method
+                Navigator.pushNamed(context, RouteName.screenThree);
 
 
                 //Navigation through pushNamed

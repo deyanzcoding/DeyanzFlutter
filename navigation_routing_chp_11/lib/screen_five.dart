@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:navigation_routing_chp_11/home_screen.dart';
-import 'package:navigation_routing_chp_11/main.dart';
+import 'package:navigation_routing_chp_11/utils/routes_names.dart';
 
 class ScreenFive extends StatefulWidget {
   const ScreenFive({super.key});
@@ -27,7 +26,7 @@ class _ScreenFiveState extends State<ScreenFive> {
           Padding(padding: EdgeInsets.symmetric(horizontal: 10),
             child: InkWell(
               onLongPress: () {
-
+                Navigator.pushNamed(context, RouteName.homeScreen);
 
                 //Navigation through id
                 // Navigator.pushNamed(context, HomeScreen.id);

@@ -1,7 +1,8 @@
 
-import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:navigation_routing_chp_11/screen_two.dart';
+import 'package:navigation_routing_chp_11/utils/routes_names.dart';
 
 class HomeScreen extends StatefulWidget {
   // static const String id = 'home_screen';
@@ -30,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
               onTap: () {
-
+              //Navigation through 3rd method
+                Navigator.pushNamed(context, RouteName.screenTwo);
 
 
                // Navigator.pushNamed(context, ScreenTwo.id,
