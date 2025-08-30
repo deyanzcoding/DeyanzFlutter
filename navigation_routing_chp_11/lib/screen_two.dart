@@ -27,9 +27,11 @@ class _ScreenTwoState extends State<ScreenTwo> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(arguments.toString()),
-          Text('Name: ' + arguments['name']),
-          Text('Age: ' + arguments['age']),
+
+          //Navigation through id
+          // Text(arguments.toString()),
+          // Text('Name: ' + arguments['name']),
+          // Text('Age: ' + arguments['age']),
 
           SizedBox(height: 10,),
 

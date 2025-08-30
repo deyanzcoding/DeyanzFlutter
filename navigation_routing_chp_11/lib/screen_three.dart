@@ -7,9 +7,9 @@ import 'package:navigation_routing_chp_11/screen_two.dart';
 class ScreenThree extends StatefulWidget {
   static const String id = 'screen_three';
 
-  final String name;
-  final int age;
-  const ScreenThree({super.key, this.name='', this.age=0});
+  // final String name;
+  // final int age;
+  const ScreenThree({super.key});
 
   @override
   State<ScreenThree> createState() => _ScreenThreeState();
@@ -31,9 +31,11 @@ class _ScreenThreeState extends State<ScreenThree> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(arguments.toString()),
-          Text('GPA: ' + arguments['gpa']),
-          Text('University : ' + arguments['uni']),
+
+          //Navigation through id
+          // Text(arguments.toString()),
+          // Text('GPA: ' + arguments['gpa']),
+          // Text('University : ' + arguments['uni']),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12),
             child: InkWell(

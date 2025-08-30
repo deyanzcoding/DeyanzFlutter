@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         HomeScreen.id : (context) => HomeScreen(),
         ScreenTwo.id : (context) => ScreenTwo(),
-        ScreenThree.id : (context) => ScreenThree(name: 'deyan', age: 20,),
+        ScreenThree.id : (context) => ScreenThree(),
         ScreenFour.id : (context) => ScreenFour(),
         ScreenFive.id: (context) => ScreenFive(),
       },
