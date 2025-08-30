@@ -41,10 +41,7 @@ class _ScreenFourState extends State<ScreenFour> {
                   color: Colors.green,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [Icon(Icons.five_g), Text('goto screen five')],),
+                child: Center(child: Text('Goto ScreenFive')),
               ),
             ),
           ),
