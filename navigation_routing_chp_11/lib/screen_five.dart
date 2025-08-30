@@ -22,7 +22,7 @@ class _ScreenFiveState extends State<ScreenFive> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text('onLongPress goto home screen'),
+          Text('onLongPress got o home screen'),
           Padding(padding: EdgeInsets.symmetric(horizontal: 10),
             child: InkWell(
               onLongPress: () {
