@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:navigation_routing_chp_11/screen_three.dart';
 
 class ScreenTwo extends StatefulWidget {
-  static const String id = 'screen_two';
+  // static const String id = 'screen_two';
 
   // final String name;
   const ScreenTwo({super.key});
@@ -39,12 +39,16 @@ class _ScreenTwoState extends State<ScreenTwo> {
             padding: EdgeInsets.symmetric(horizontal: 12),
             child: InkWell(
               onTap: () {
-              Navigator.pushNamed(context, ScreenThree.id,
-              arguments: {
-                'gpa': '3.41',
-                'uni': 'awkum',
-              }
-              );
+
+
+
+                //Navigation through pushNamed
+              // Navigator.pushNamed(context, ScreenThree.id,
+              // arguments: {
+              //   'gpa': '3.41',
+              //   'uni': 'awkum',
+              // }
+              // );
 
               },
               child: Container(

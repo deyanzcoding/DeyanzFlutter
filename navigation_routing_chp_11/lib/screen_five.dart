@@ -7,7 +7,7 @@ class ScreenFive extends StatefulWidget {
 
   @override
   State<ScreenFive> createState() => _ScreenFiveState();
-  static const String id = 'screen_five';
+  // static const String id = 'screen_five';
 }
 
 class _ScreenFiveState extends State<ScreenFive> {
@@ -27,7 +27,10 @@ class _ScreenFiveState extends State<ScreenFive> {
           Padding(padding: EdgeInsets.symmetric(horizontal: 10),
             child: InkWell(
               onLongPress: () {
-                Navigator.pushNamed(context, HomeScreen.id);
+
+
+                //Navigation through id
+                // Navigator.pushNamed(context, HomeScreen.id);
 
                 // Navigator.push(context,
                 //   MaterialPageRoute(builder: (context) => HomeScreen())

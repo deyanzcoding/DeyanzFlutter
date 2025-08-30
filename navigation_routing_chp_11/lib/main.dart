@@ -23,14 +23,16 @@ class _MyAppState extends State<MyApp> {
       title: 'Main Screen',
       theme: ThemeData(primarySwatch: Colors.blue),
 
-      initialRoute: HomeScreen.id,
-      routes: {
-        HomeScreen.id : (context) => HomeScreen(),
-        ScreenTwo.id : (context) => ScreenTwo(),
-        ScreenThree.id : (context) => ScreenThree(),
-        ScreenFour.id : (context) => ScreenFour(),
-        ScreenFive.id: (context) => ScreenFive(),
-      },
+
+      //Navigation through id
+      // initialRoute: HomeScreen.id,
+      // routes: {
+      //   HomeScreen.id : (context) => HomeScreen(),
+      //   ScreenTwo.id : (context) => ScreenTwo(),
+      //   ScreenThree.id : (context) => ScreenThree(),
+      //   ScreenFour.id : (context) => ScreenFour(),
+      //   ScreenFive.id: (context) => ScreenFive(),
+      // },
     );
   }
 }

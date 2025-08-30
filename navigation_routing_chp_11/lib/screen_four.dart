@@ -28,7 +28,9 @@ class _ScreenFourState extends State<ScreenFour> {
           Padding(padding: EdgeInsets.symmetric(horizontal: 10),
             child: InkWell(
               onDoubleTap: () {
-                Navigator.pushNamed(context, ScreenFive.id);
+
+                //Navigation through id
+                // Navigator.pushNamed(context, ScreenFive.id);
 
                 // Navigator.push(context,
                 //   MaterialPageRoute(builder: (context) => HomeScreen())

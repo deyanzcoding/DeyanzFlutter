@@ -5,7 +5,7 @@ import 'package:navigation_routing_chp_11/screen_four.dart';
 import 'package:navigation_routing_chp_11/screen_two.dart';
 
 class ScreenThree extends StatefulWidget {
-  static const String id = 'screen_three';
+  // static const String id = 'screen_three';
 
   // final String name;
   // final int age;
