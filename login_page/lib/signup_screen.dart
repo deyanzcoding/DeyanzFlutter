@@ -11,7 +11,9 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
-  @override
+    bool _isPasswordVisible = false;
+
+    @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -88,6 +90,7 @@ class _SignupScreenState extends State<SignupScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: 'Email',
                     prefixIcon: Icon(Icons.email),
@@ -113,6 +116,16 @@ class _SignupScreenState extends State<SignupScreen> {
                   decoration: InputDecoration(
                     hintText: 'Password',
                     prefixIcon: Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _isPasswordVisible = !_isPasswordVisible;
+                          });
+                        },
+                        icon: Icon(
+                          _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                        )
+                    ),
                     fillColor: Color(0xffF8F9FA),
                     filled: true,
                     focusedBorder: OutlineInputBorder(
@@ -124,6 +137,10 @@ class _SignupScreenState extends State<SignupScreen> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
+                  obscureText: !_isPasswordVisible,
+                  obscuringCharacter: '*',
+                  keyboardType: TextInputType.visiblePassword,
+
                 ),
               ),
               SizedBox(height: 10),
@@ -135,6 +152,16 @@ class _SignupScreenState extends State<SignupScreen> {
                   decoration: InputDecoration(
                     hintText: 'Confirm Password',
                     prefixIcon: Icon(Icons.lock),
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _isPasswordVisible = !_isPasswordVisible;
+                          });
+                        },
+                        icon: Icon(
+                          _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                        )
+                    ),
                     fillColor: Color(0xffF8F9FA),
                     filled: true,
                     focusedBorder: OutlineInputBorder(
@@ -146,6 +173,9 @@ class _SignupScreenState extends State<SignupScreen> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
+                  obscureText: !_isPasswordVisible,
+                  obscuringCharacter: '*',
+                  keyboardType: TextInputType.visiblePassword,
                 ),
               ),
               SizedBox(height: 10),
