@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:login_page/signup_screen.dart';
+import 'package:login_page/widgets/button_component.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home_screen.dart';
@@ -42,8 +44,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Image(
                     image: AssetImage('assets/images/logo.png'),
-                    height: 50,
-                    width: 50,
+                    height: 70,
+                    width: 70,
                   ),
                   SizedBox(width: 10),
                   Column(
@@ -52,14 +54,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text(
                         'Maintenance',
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 25,
                           fontFamily: 'Rubik Medium',
                         ),
                       ),
                       Text(
                         'Box',
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 25,
                           fontFamily: 'Rubik Medium',
                           color: Color(0xfff9703B),
                         ),
@@ -73,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
               // After-logo content
               Center(
                 child: Text(
-                  'Login, plz...',
+                  'Login',
                   style: TextStyle(
                     fontSize: 24,
                     fontFamily: 'Rubik Medium',
@@ -100,6 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
+                  controller: _usernameController,
                   decoration: InputDecoration(
                     hintText: "Email",
                     prefixIcon: Icon(
@@ -143,28 +146,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 15),
 
               // Box Container
-              Container(
-                height: 50,
-                width: 300,
-                decoration: BoxDecoration(
-                  color: Color(0xffF9703B),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-
-                child: Center(
-                  child: Text(
-                    'LOG IN',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Rubik Medium',
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+              InkWell(
+                onTap: () {
+                  _login();
+                  Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen())
+                  );
+                },
+                child: MyButton(text: 'LOGIN'),
               ),
+
               SizedBox(height: 15),
 
               //row for signup
@@ -179,12 +173,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontFamily: 'Rubik Medium',
                     ),
                   ),
-                  Text(
-                    'Sign Up',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'Rubik Medium',
-                      color: Color(0xffF9703B),
+                  InkWell(
+                    onTap: () {
+                      // Navigate to the signup screen
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SignupScreen())
+                      );
+                    },
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Rubik Medium',
+                        color: Color(0xffF9703B),
+                      ),
                     ),
                   ),
                 ],
