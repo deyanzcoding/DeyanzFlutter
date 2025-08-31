@@ -40,92 +40,93 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   centerTitle: true,
-      //   title: const Text('Home'),
-      //   backgroundColor: const Color(0xffF9703B),
-      //   foregroundColor: Colors.white,
-      // ),
-      body: Center(
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                const SizedBox(height: 50),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        'assets/images/logo.png',
-                        height: 70,
-                        width: 70,
-                        errorBuilder: (context, error, stackTrace) =>
-                            const Icon(Icons.error, size: 70),
-                      ),
-                    ),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Maintenance',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontFamily: 'Rubik Medium',
-                          ),
-                        ),
-                        Text(
-                          'Box',
-                          style: TextStyle(
-                            fontSize: 25,
-                            fontFamily: 'Rubik Medium',
-                            color: Color(0xffF9703B),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 200),
-                Column(
-                  children: [
-                    Text(
-                      'Welcome to \nHome Page 🎉',
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 40,
-                        fontFamily: 'Rubik Medium',
-                      ),
-                    ),
-                    Text(
-                      '$username',
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: 'Rubik Medium',
-                        color: Color(0xffF9703B),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 120),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.appThemeBold,
+      appBar: AppBar(
+        title: const Text('Home Screen'),
+        backgroundColor: AppColors.appThemeBold,
+        foregroundColor: Colors.white,
+      ),
+      body: SafeArea(
+            top: true,
+        child: SingleChildScrollView(
+          child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/logo.png',
+                    height: 60,
+                    width: 60,
+                    errorBuilder: (context, error, stackTrace) => const Icon(Icons.error, size: 70),
                   ),
-                  onPressed: _logout,
-                  child: const Text(
-                    "Logout",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Rubik Medium',
-                    ),
+                  const SizedBox(width: 10),
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'ABDUL WALI KHAN',
+                        style: TextStyle(
+                          fontSize: 22,
+                          color: AppColors.blackBold,
+                          fontFamily: 'Rubik Medium',
+                        ),
+                      ),
+                      Text(
+                        'UNIVERSITY MARDAN',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontFamily: 'Rubik Medium',
+                          color: Color(0xff710000),
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 18),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Container(
+                  height: 380,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: AppColors.appThemeBold,
+                    borderRadius: BorderRadius.circular(30),
+                    
+                  ),
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 15),
+                      const CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('assets/images/deyan_white.png'),
+                      ),
+
+                      Text('$username', style: TextStyle(fontSize: 22, color: Colors.white, fontFamily: 'Rubik Medium'),),
+
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 25),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.appThemeBold,
+                ),
+                onPressed: _logout,
+                child: const Text(
+                  "Logout",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Rubik Medium',
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

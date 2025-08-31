@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/signup_screen.dart';
+import 'package:login_page/widgets/app_colors.dart';
 import 'package:login_page/widgets/button_component.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -60,11 +61,11 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Login'),
-      //   backgroundColor: const Color(0xffF9703B),
-      //   foregroundColor: Colors.white,
-      // ),
+      appBar: AppBar(
+        title: const Text('Login'),
+        backgroundColor: AppColors.appThemeBold,
+        foregroundColor: Colors.white,
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -79,8 +80,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Image.asset(
                       'assets/images/logo.png',
-                      height: 70,
-                      width: 70,
+                      height: 60,
+                      width: 60,
                       errorBuilder: (context, error, stackTrace) => const Icon(Icons.error, size: 70),
                     ),
                     const SizedBox(width: 10),
@@ -88,18 +89,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Maintenance',
+                          'ABDUL WALI KHAN',
                           style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 22,
+                            color: AppColors.blackBold,
                             fontFamily: 'Rubik Medium',
                           ),
                         ),
                         Text(
-                          'Box',
+                          'UNIVERSITY MARDAN',
                           style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 22,
                             fontFamily: 'Rubik Medium',
-                            color: Color(0xffF9703B),
+                            color: Color(0xff710000),
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -257,7 +259,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                           fontSize: 16,
                           fontFamily: 'Rubik Medium',
-                          color: Color(0xffF9703B),
+                          color: AppColors.appThemeBold,
                         ),
                       ),
                     ),

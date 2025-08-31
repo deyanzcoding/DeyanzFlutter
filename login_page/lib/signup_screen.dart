@@ -49,11 +49,11 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Sign Up'),
-      //   backgroundColor: const Color(0xffF9703B),
-      //   foregroundColor: Colors.white,
-      // ),
+      appBar: AppBar(
+        title: const Text('Sign Up'),
+        backgroundColor: AppColors.appThemeBold,
+        foregroundColor: Colors.white,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -67,7 +67,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   height: 80,
                   width: 80,
                   decoration: BoxDecoration(
-                    color: const Color(0xffF9703B),
+                    color: AppColors.appThemeBold,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const Icon(Icons.person, size: 50, color: Colors.white),
