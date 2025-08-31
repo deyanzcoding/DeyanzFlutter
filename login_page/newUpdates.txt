@@ -1,0 +1,60 @@
+Improvements Made:
+
+Form Validation:
+
+Added Form widget and TextFormField validators for email, password, and name fields in login_screen.dart and signup_screen.dart.
+Email validation uses a regex to ensure proper format.
+Password validation enforces a minimum length of 6 characters.
+Confirm password validation checks for matching passwords in signup_screen.dart.
+
+
+Password Visibility Toggle:
+
+Added visibility toggle icons for password and confirm password fields in both login_screen.dart and signup_screen.dart.
+
+
+Error Handling:
+
+Added error messages for invalid login credentials and form validation failures.
+Displays error messages in red below the form fields.
+
+
+SharedPreferences Enhancements:
+
+Improved signup_screen.dart to store name, email, and password in SharedPreferences.
+Enhanced login_screen.dart to validate credentials against stored email and password.
+Modified home_screen.dart to clear only the isLoggedIn flag on logout, preserving user data for future logins.
+
+
+UI/UX Improvements:
+
+Added AppBar to login_screen.dart, signup_screen.dart, and home_screen.dart for better navigation.
+Moved MaterialApp from login_screen.dart to main.dart to avoid nested MaterialApp widgets, which can cause issues.
+Added a consistent ThemeData in main.dart with primary color, font, and text styles.
+Wrapped content in SingleChildScrollView to handle overflow on smaller screens.
+Added fallback for missing logo image using errorBuilder.
+
+
+Code Organization:
+
+Updated import paths to use package notation (package:maintenance_box/...).
+Improved button_component.dart to accept an onPressed callback for better reusability.
+Added proper controller disposal in login_screen.dart and signup_screen.dart to prevent memory leaks.
+
+
+Home Screen Enhancements:
+
+Personalized the welcome message with the user's name.
+Moved logout to an AppBar action icon for a cleaner UI.
+Centered content vertically for better presentation.
+
+
+
+Additional Recommendations:
+
+Backend Integration: Replace SharedPreferences with a backend service (e.g., Firebase) for secure user authentication in a production app.
+Secure Password Storage: Avoid storing passwords in plain text in SharedPreferences. Use secure storage or a backend for sensitive data.
+Asset Validation: Ensure assets/images/logo.png is correctly defined in pubspec.yaml.
+Font Configuration: Add Rubik font to pubspec.yaml and ensure it’s properly loaded.
+State Management: For larger apps, consider using Provider or Riverpod for better state management.
+Testing: Add unit and widget tests to validate form inputs and navigation logic.
