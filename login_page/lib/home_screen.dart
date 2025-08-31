@@ -96,18 +96,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   decoration: BoxDecoration(
                       color: AppColors.appThemeBold,
                     borderRadius: BorderRadius.circular(30),
-                    
+
                   ),
                   child: Column(
                     children: [
                       const SizedBox(height: 15),
-                      const CircleAvatar(
-                        radius: 50,
-                        backgroundImage: AssetImage('assets/images/deyan_white.png'),
+                      Container(
+                        height: 80,
+                        width: 80,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          image: DecorationImage(image: AssetImage('assets/images/deyan_yellow.png'),
+                          fit: BoxFit.cover,
+                          )
+                      ),
+
                       ),
 
                       Text('$username', style: TextStyle(fontSize: 22, color: Colors.white, fontFamily: 'Rubik Medium'),),
-
+                      Text('s/o Khursheed Ahmed', style: TextStyle(fontSize: 18, color: Colors.white, fontFamily: 'Rubik Medium'),),
                     ],
                   ),
                 ),
