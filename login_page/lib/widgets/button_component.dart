@@ -11,21 +11,18 @@ class MyButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: InkWell(
-        onTap: () {
-          onPressed: onPressed;
-        },
+        onTap: onPressed, // Directly call the onPressed callback
         child: Container(
           height: 50,
           width: 300,
           decoration: BoxDecoration(
-            color: Color(0xffF9703B),
+            color: const Color(0xffF9703B),
             borderRadius: BorderRadius.circular(10),
           ),
-        
           child: Center(
             child: Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontFamily: 'Rubik Medium',
                 color: Colors.white,

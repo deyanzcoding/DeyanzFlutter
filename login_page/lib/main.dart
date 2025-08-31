@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:login_page/login_screen.dart';
 
 import 'home_screen.dart';
+import 'login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,8 +20,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: isLoggedIn ? HomeScreen() : LoginScreen(),
+      title: 'Maintenance Box',
+      theme: ThemeData(
+        primaryColor: const Color(0xffF9703B),
+        fontFamily: 'Rubik',
+        scaffoldBackgroundColor: Colors.white,
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+          bodyMedium: TextStyle(fontSize: 16, color: Color(0xff4C5980)),
+        ),
+      ),
+      home: isLoggedIn ? const HomeScreen() : const LoginScreen(),
     );
   }
 }
-
