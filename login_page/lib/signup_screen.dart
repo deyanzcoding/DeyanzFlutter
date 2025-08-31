@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_page/login_screen.dart';
 import 'package:login_page/widgets/app_colors.dart';
 import 'package:login_page/widgets/button_component.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -15,6 +16,19 @@ class _SignupScreenState extends State<SignupScreen> {
 
     @override
   Widget build(BuildContext context) {
+      final TextEditingController emailController = TextEditingController();
+      final TextEditingController passwordController = TextEditingController();
+
+      Future<void> saveCredentials() async {
+        final SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString('email', emailController.toString());
+        prefs.setString('password', passwordController.toString());
+
+        Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => LoginScreen()),
+        );
+      }
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -67,7 +81,6 @@ class _SignupScreenState extends State<SignupScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
-                  // controller: _usernameController,
                   decoration: InputDecoration(
                     hintText: "Name",
                     prefixIcon: Icon(Icons.person, color: Color(0xff323f4B)),
@@ -90,6 +103,7 @@ class _SignupScreenState extends State<SignupScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
+                  controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: 'Email',
@@ -113,6 +127,7 @@ class _SignupScreenState extends State<SignupScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: TextFormField(
+                  controller: passwordController,
                   decoration: InputDecoration(
                     hintText: 'Password',
                     prefixIcon: Icon(Icons.lock),
@@ -181,7 +196,15 @@ class _SignupScreenState extends State<SignupScreen> {
               SizedBox(height: 10),
           
               //signup button
-              MyButton(text: 'SIGN UP'),
+              MyButton(
+                  text: 'SIGN UP',
+                  onPressed: () {
+                    onPressed: saveCredentials;
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
+                  }
+              ),
               SizedBox(height: 8),
           
               //already have account
