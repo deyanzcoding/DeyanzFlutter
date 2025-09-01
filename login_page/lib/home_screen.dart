@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_page/widgets/app_colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -45,6 +46,67 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: AppColors.appThemeBold,
         foregroundColor: Colors.white,
       ),
+
+      //drawer (sidebar items)
+      drawer: SafeArea(
+        child: Drawer(
+          child: ListView(
+            children: [
+              UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: AppColors.appThemeBold,
+                ),
+
+                  currentAccountPicture:CircleAvatar(
+                    radius: 50,
+                    backgroundImage: AssetImage('assets/images/deyan_white.png'),
+                  ),
+
+                  accountName: Text('Deyan Ahmad', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w700),),
+                  accountEmail: Text('deyanzcoding@gmail.com'),
+              ),
+
+              // drawer Dashboard
+              ListTile(
+                leading: FaIcon(FontAwesomeIcons.house),
+                title: Text('Dashboard', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
+                onTap: () {
+                  Navigator.push(
+                  context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
+                },
+              ),
+
+              // drawer suggestedToYou
+              ListTile(
+                leading: FaIcon(FontAwesomeIcons.idCard),
+                title: Text('Student Card', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
+                onTap: () {
+                  Navigator.push(
+                  context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
+                },
+              ),
+
+               // drawer suggestedToYou
+              ListTile(
+                leading: const FaIcon(FontAwesomeIcons.hotel ),
+                title: Text('Hostel Facility', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
+                onTap: () {
+                  Navigator.push(
+                  context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
+                },
+              )
+
+            ],
+          )
+        ),
+      ),
+
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
