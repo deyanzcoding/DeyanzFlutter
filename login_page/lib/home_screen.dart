@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:login_page/Drawer/student_card.dart';
 import 'package:login_page/widgets/app_colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -85,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.push(
                   context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                    MaterialPageRoute(builder: (context) => StudentCard()),
                   );
                 },
               ),
@@ -156,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
 
-                //student card
+                //student dashboard
                 child: Container(
                   height: 400,
                   width: double.infinity,
@@ -165,9 +166,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(30),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.shade300,
+                        color: Colors.grey,
+                        blurRadius: 10,
+                        offset: Offset(0, 10),
                         spreadRadius: 5,
-                        blurRadius: 7,
+
                       ),
                     ],
                   ),
