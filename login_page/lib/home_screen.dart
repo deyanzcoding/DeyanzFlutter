@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_page/Drawer/student_card.dart';
+import 'package:login_page/Drawer/transport_screen.dart';
 import 'package:login_page/widgets/app_colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'Drawer/fee_history.dart';
+import 'Drawer/hostel_screen.dart';
 import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -50,61 +53,119 @@ class _HomeScreenState extends State<HomeScreen> {
 
       //drawer (sidebar items)
       drawer: SafeArea(
-        child: Drawer(
-          child: ListView(
-            children: [
-              UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  color: AppColors.appThemeBold,
-                ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 60),
+          child: Container(
+            width: 250,
 
-                  currentAccountPicture:CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage('assets/images/deyan_white.png'),
+            child: Drawer(
+              child: ListView(
+                children: [
+                  UserAccountsDrawerHeader(
+                    decoration: BoxDecoration(
+                      color: AppColors.appThemeBold,
+                    ),
+
+                      currentAccountPicture:CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('assets/images/deyan_white.png'),
+                      ),
+
+                      accountName: Text('Deyan Ahmad', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w700),),
+                      accountEmail: Text('deyanzcoding@gmail.com'),
                   ),
 
-                  accountName: Text('Deyan Ahmad', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w700),),
-                  accountEmail: Text('deyanzcoding@gmail.com'),
-              ),
+                  // drawer Dashboard
+                  ListTile(
+                    leading: FaIcon(FontAwesomeIcons.house),
+                    title: Text('Dashboard', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
+                    onTap: () {
+                      Navigator.push(
+                      context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                      );
+                    },
+                  ),
 
-              // drawer Dashboard
-              ListTile(
-                leading: FaIcon(FontAwesomeIcons.house),
-                title: Text('Dashboard', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
-                onTap: () {
-                  Navigator.push(
-                  context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
-                  );
-                },
-              ),
+                  // drawer student card
+                  ListTile(
+                    leading: FaIcon(FontAwesomeIcons.idCard),
+                    title: Text('Student Card', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
+                    onTap: () {
+                      Navigator.push(
+                      context,
+                        MaterialPageRoute(builder: (context) => StudentCard()),
+                      );
+                    },
+                  ),
 
-              // drawer suggestedToYou
-              ListTile(
-                leading: FaIcon(FontAwesomeIcons.idCard),
-                title: Text('Student Card', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
-                onTap: () {
-                  Navigator.push(
-                  context,
-                    MaterialPageRoute(builder: (context) => StudentCard()),
-                  );
-                },
-              ),
+                   // drawer hostel
+                  ListTile(
+                    leading: const FaIcon(FontAwesomeIcons.hotel ),
+                    title: Text('Hostel Facility', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
+                    onTap: () {
+                      Navigator.push(
+                      context,
+                        MaterialPageRoute(builder: (context) => HostelScreen()),
+                      );
+                    },
+                  ),
 
-               // drawer suggestedToYou
-              ListTile(
-                leading: const FaIcon(FontAwesomeIcons.hotel ),
-                title: Text('Hostel Facility', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
-                onTap: () {
-                  Navigator.push(
-                  context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
-                  );
-                },
+                  // drawer Transport Facility
+                  ListTile(
+                    leading: const FaIcon(FontAwesomeIcons.bus ),
+                    title: Text('Transport Facility', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => TransportScreen()),
+                      );
+                    },
+                  ),
+
+                  // drawer fee history
+                  ListTile(
+                    leading: const FaIcon(FontAwesomeIcons.moneyCheckDollar ),
+                    title: Text('Fee History', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w500),),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FeeHistory()),
+                      );
+                    },
+                  ),
+
+
+                  SizedBox(height: 80,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.appThemeBold,
+                      ),
+                      onPressed: _logout,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FaIcon(FontAwesomeIcons.rightFromBracket, color: Colors.white,),
+                          SizedBox(width: 10,),
+
+                          const Text(
+                            "Logout",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Rubik Medium',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                ],
               )
-
-            ],
-          )
+            ),
+          ),
         ),
       ),
 
@@ -414,20 +475,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 25),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.appThemeBold,
-                ),
-                onPressed: _logout,
-                child: const Text(
-                  "Logout",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Rubik Medium',
-                  ),
-                ),
-              ),
+
             ],
           ),
         ),
