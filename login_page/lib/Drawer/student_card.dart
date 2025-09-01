@@ -10,6 +10,14 @@ class StudentCard extends StatefulWidget {
   State<StudentCard> createState() => _StudentCardState();
 }
 
+final TextEditingController _studentName = TextEditingController();
+final TextEditingController _fatherName = TextEditingController();
+final TextEditingController _session = TextEditingController();
+final TextEditingController _campus = TextEditingController();
+final TextEditingController _decipline = TextEditingController();
+final TextEditingController _semester = TextEditingController();
+
+
 class _StudentCardState extends State<StudentCard> {
   @override
   Widget build(BuildContext context) {
@@ -57,50 +65,31 @@ class _StudentCardState extends State<StudentCard> {
           ],
         ),
         SizedBox(height: 20),
-        
+
         // student idCard information
-        // DataTable(
-        //   columns: [
-        //     DataColumn(label: Text('Name')),
-        //     DataColumn(label: Text('Age')),
-        //   ],
-        //   rows: [
-        //     // row1
-        //     DataRow(cells: [
-        //       DataCell(Text('Deyan')),
-        //       DataCell(Text('18')),
-        //     ],
-        //     ),
-        //
-        //     // row2
-        //     DataRow(cells: [
-        //       DataCell(Text('Hasnain')),
-        //       DataCell(Text('19')),
-        //     ],
-        //     )
-        //   ],
-        // )
+        DataTable(
+          columns: [
+            DataColumn(label: Text('Name')),
+            DataColumn(label: Text('Age')),
+          ],
+          rows: [
+            // row1
+            DataRow(cells: [
+              DataCell(Text('Deyan')),
+              DataCell(Text('18')),
+            ],
+            ),
+
+            // row2
+            DataRow(cells: [
+              DataCell(Text('Hasnain')),
+              DataCell(Text('19')),
+            ],
+            )
+          ],
+        )
         
-        Table(
-          border: TableBorder.all(color: Colors.black12),
-          columnWidths: {
-            0: FlexColumnWidth(2), // Left column (labels)
-            1: FlexColumnWidth(3), // Right column (inputs)
-          },
-          children: [
-            _buildRow("Name", TextField(decoration: InputDecoration(border: InputBorder.none))),
-            _buildRow("Father Name", TextField(decoration: InputDecoration(border: InputBorder.none))),
-            _buildRow("Session", TextField(decoration: InputDecoration(border: InputBorder.none))),
-            _buildRow("Campus", TextField(decoration: InputDecoration(border: InputBorder.none))),
-            _buildRow("Discipline", TextField(decoration: InputDecoration(border: InputBorder.none))),
-            _buildRow("Semester", TextField(decoration: InputDecoration(border: InputBorder.none))),
-            _buildRow("Card Fee", TextField(decoration: InputDecoration(border: InputBorder.none))),
-            _buildRow("Total Amount", TextField(decoration: InputDecoration(border: InputBorder.none))),
-            _buildRow("Issue Date", TextField(decoration: InputDecoration(border: InputBorder.none))),
-            _buildRow("Last Date", TextField(decoration: InputDecoration(border: InputBorder.none))),
-          ]
-        ),
-        
+
         
           ],   // column-children
         ),
