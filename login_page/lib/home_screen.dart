@@ -94,8 +94,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 380,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                      color: AppColors.appThemeBold,
+                      color: Colors.grey,
                     borderRadius: BorderRadius.circular(30),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade300,
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                      ),
+                    ]
 
                   ),
                   child: Column(
@@ -107,16 +114,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
-                          image: DecorationImage(image: AssetImage('assets/images/deyan_yellow.png'),
+                          image: DecorationImage(image: AssetImage('assets/images/deyan_white.png'),
                           fit: BoxFit.cover,
                           )
                       ),
 
                       ),
 
-                      Text('$username', style: TextStyle(fontSize: 22, color: Colors.white, fontFamily: 'Rubik Medium'),),
-                      Text('s/o Khursheed Ahmed', style: TextStyle(fontSize: 15, color: Colors.white, fontFamily: 'Rubik Medium'),),
-                      Text('AWKUM-231008077', style: TextStyle(fontSize: 15, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                      Text('$username', style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.w900, fontFamily: 'Rubik Medium'),),
+                      Text('s/o Khursheed Ahmed', style: TextStyle(fontSize: 15, color: Colors.white, fontFamily: 'Rubik Regular'),),
+                      Text('AWKUM-231008077', style: TextStyle(fontSize: 15, color: Colors.white, fontFamily: 'Rubik Regular'),),
 
                      SizedBox(height: 10,),
                       Divider(height: 1, color: AppColors.appThemeGrey,),
