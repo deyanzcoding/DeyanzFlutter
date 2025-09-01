@@ -126,6 +126,7 @@ class MyScaffold extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.appThemeBold,
                         ),
+                        onPressed: () {},
                         // onPressed: _logout,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
