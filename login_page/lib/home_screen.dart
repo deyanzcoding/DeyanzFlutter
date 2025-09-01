@@ -115,7 +115,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       Text('$username', style: TextStyle(fontSize: 22, color: Colors.white, fontFamily: 'Rubik Medium'),),
-                      Text('s/o Khursheed Ahmed', style: TextStyle(fontSize: 18, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                      Text('s/o Khursheed Ahmed', style: TextStyle(fontSize: 15, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                      Text('AWKUM-231008077', style: TextStyle(fontSize: 15, color: Colors.white, fontFamily: 'Rubik Medium'),),
+
+                     SizedBox(height: 10,),
+                      Divider(height: 1, color: AppColors.appThemeGrey,),
+
+                      Row(children: [
+                        SizedBox(width: 20,),
+                        Text('Campus', )
+                      ],)
+
                     ],
                   ),
                 ),
