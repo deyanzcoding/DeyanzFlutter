@@ -54,10 +54,12 @@ class _HomeScreenState extends State<HomeScreen> {
       //drawer (sidebar items)
       drawer: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 60),
+          padding: const EdgeInsets.only(top: 60, bottom: 10),
           child: Container(
             width: 250,
+            decoration: BoxDecoration(
 
+            ),
             child: Drawer(
               child: ListView(
                 children: [
@@ -66,9 +68,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: AppColors.appThemeBold,
                     ),
 
-                      currentAccountPicture:CircleAvatar(
-                        radius: 50,
-                        backgroundImage: AssetImage('assets/images/deyan_white.png'),
+                      currentAccountPicture:Container(
+                        alignment: Alignment.center,
+                        child: CircleAvatar(
+                          radius: 50,
+                          backgroundImage: AssetImage('assets/images/deyan_white.png'),
+                        ),
                       ),
 
                       accountName: Text('Deyan Ahmad', style: TextStyle(fontSize: 15.5, fontFamily: 'Rubik Regular', fontWeight: FontWeight.w700),),

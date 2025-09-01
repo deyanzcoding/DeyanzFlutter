@@ -1,3 +1,5 @@
+//page 127 error
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_page/Drawer/student_card.dart';
@@ -13,15 +15,15 @@ import 'hostel_screen.dart';
 class MyScaffold extends StatelessWidget {
   const MyScaffold({super.key});
 
-  Future<void> _logout ()  async {
-    final prefs = SharedPreferences.getInstance();
-    await prefs.setBool('isLoggedIn', false);
-
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => LoginScreen()),
-    );
-  }
+  // Future<void> _logout ()  async {
+  //   final prefs = SharedPreferences.getInstance();
+  //   await prefs.setBool('isLoggedIn', false);
+  //
+  //   Navigator.pushReplacement(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => LoginScreen()),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +126,7 @@ class MyScaffold extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: AppColors.appThemeBold,
                         ),
-                        onPressed: _logout,
+                        // onPressed: _logout,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

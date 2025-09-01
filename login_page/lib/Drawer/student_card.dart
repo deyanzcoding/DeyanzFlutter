@@ -26,7 +26,7 @@ class _StudentCardState extends State<StudentCard> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FaIcon(FontAwesomeIcons.idCard, size: 55),
+              FaIcon(FontAwesomeIcons.idCard, size: 60),
 
               const SizedBox(width: 10),
               const Column(
@@ -74,8 +74,9 @@ class _StudentCardState extends State<StudentCard> {
                 },
 
                 children: [
+                  // row1
                   TableRow(
-                    decoration: BoxDecoration(color: Color(0xff710000)),
+
                     // row1
                     children: <Widget>[
                       Align(
@@ -98,7 +99,7 @@ class _StudentCardState extends State<StudentCard> {
                             'DEYAN AHMAD',
                             style: TextStyle(
                               fontSize: 15.5,
-                              color: Colors.white,
+                              color: AppColors.appThemeGrey,
                               fontFamily: 'Rubik Regular',
                             ),
                           ),
@@ -110,10 +111,12 @@ class _StudentCardState extends State<StudentCard> {
                   // row2
                   TableRow(
                     children: <Widget>[
-                      TableCell(child: Text('Session')),
+                      TableCell(child: Text('Session', style: TextStyle(fontSize: 15.5, color: Colors.white, fontFamily: 'Rubik Regular',),)),
                       TableCell(child: Text('Spring 2025')),
                     ],
                   ),
+
+
                 ],
               ),
             ),
