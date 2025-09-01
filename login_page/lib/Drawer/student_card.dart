@@ -22,6 +22,8 @@ class _StudentCardState extends State<StudentCard> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+
+          //idCard and text
           SizedBox(height: 50),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -55,74 +57,14 @@ class _StudentCardState extends State<StudentCard> {
           ),
           SizedBox(height: 20),
 
-          //Table
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-              ),
+          // student idCard information
+          
 
-                child: Table(
-                border: TableBorder.all(
-                  width: 1.0,
-                  color: AppColors.appThemeGrey,
-                  style: BorderStyle.solid,
-                ),
-                columnWidths: const <int, TableColumnWidth>{
-                  0: FixedColumnWidth(110.0), // Name column
-                },
-
-                children: [
-                  // row1
-                  TableRow(
-
-                    // row1
-                    children: <Widget>[
-                      Align(
-                        alignment: Alignment.center,
-                        child: TableCell(
-                          child: Text(
-                            'Name',
-                            style: TextStyle(
-                              fontSize: 15.5,
-                              color: Colors.white,
-                              fontFamily: 'Rubik Regular',
-                            ),
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: TableCell(
-                          child: Text(
-                            'DEYAN AHMAD',
-                            style: TextStyle(
-                              fontSize: 15.5,
-                              color: AppColors.appThemeGrey,
-                              fontFamily: 'Rubik Regular',
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  // row2
-                  TableRow(
-                    children: <Widget>[
-                      TableCell(child: Text('Session', style: TextStyle(fontSize: 15.5, color: Colors.white, fontFamily: 'Rubik Regular',),)),
-                      TableCell(child: Text('Spring 2025')),
-                    ],
-                  ),
-
-
-                ],
-              ),
-            ),
-          ),
         ],
       ),
+
+
+
     );
   }
 }
