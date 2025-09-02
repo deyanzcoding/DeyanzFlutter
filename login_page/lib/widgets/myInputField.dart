@@ -39,16 +39,13 @@ class Myinputfield extends StatelessWidget {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(25, 20, 12, 12),
           hintText: hintText,
-          label: label != null
-          ? Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-          )
-          : null,
-
+          labelText: label,
+          labelStyle: TextStyle(fontSize: 14, color: Colors.grey.shade600),
           prefixIcon: preIcons,
           suffixIcon: suffIcon,
           filled: true,
           fillColor: Colors.grey.shade200,
+          floatingLabelBehavior: FloatingLabelBehavior.auto,
 
           // when app start(no tap)
           enabledBorder: OutlineInputBorder(

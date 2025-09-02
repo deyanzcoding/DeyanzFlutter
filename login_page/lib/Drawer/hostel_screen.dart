@@ -71,13 +71,25 @@ class _HostelScreenState extends State<HostelScreen> {
           ),
           SizedBox(height: 10,),
 
+          // distince from awkum
           Myinputfield(
               controller: _distanceController,
-              hintText: 'Distance from AWKUM (in Kilometers)',
-              preIcons: Icon(Icons.location_on),
-
+              label: 'Distance from AWKUM (in Kilometers)',
+              preIcons: Icon(Icons.route),
           ),
+          SizedBox(height: 12,),
 
+          // your current cgpa
+          Myinputfield(
+              controller: _distanceController,
+              label: 'Your current CGPA',
+              preIcons: Icon(Icons.emoji_events),
+          ),
+          SizedBox(height: 5,),
+          Text('* Note: Not for 1st semester students', style: TextStyle(fontSize: 13, color: Colors.grey, ),),
+
+          // policy check
+          CheckboxListTile(value: value, onChanged: onChanged)
         ],
       ),
     );
