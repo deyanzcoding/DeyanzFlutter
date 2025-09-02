@@ -16,6 +16,7 @@ class _TransportScreenState extends State<TransportScreen> {
       appBar: AppBar(
         title: const Text('Transport Facility'),
         backgroundColor: AppColors.appThemeBold,
+        foregroundColor: Colors.white,
       ),
 
     );
