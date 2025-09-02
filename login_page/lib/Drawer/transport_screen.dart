@@ -106,7 +106,7 @@ class _TransportScreenState extends State<TransportScreen> {
             Myinputfield(
               controller: _transitCorridorStopController,
               label: 'Transit Corridor Stop',
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.text,
               preIcons: Icon(Icons.emoji_transportation),
               boxValidator: (value) {
                 if (value == null || value.isEmpty) {
