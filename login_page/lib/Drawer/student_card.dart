@@ -97,7 +97,18 @@ class _StudentCardState extends State<StudentCard> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text('Please fill out the details below to apply for your student identification card.',
+                style: TextStyle(fontSize: 15,
+                      color: Colors.grey.shade600,
+                      fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            SizedBox(height: 10,),
 
             Container(
               height: 100,
