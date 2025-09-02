@@ -102,7 +102,7 @@ class _TransportScreenState extends State<TransportScreen> {
             ),
             SizedBox(height: 12,),
 
-            // your current cgpa
+            // transit corridor stop
             Myinputfield(
               controller: _transitCorridorStopController,
               label: 'Transit Corridor Stop',
