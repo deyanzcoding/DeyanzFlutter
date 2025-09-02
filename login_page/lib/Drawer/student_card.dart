@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_page/widgets/button_component.dart';
 import 'package:login_page/widgets/myInputField.dart';
-
+import 'package:intl/intl.dart';
 import '../widgets/app_colors.dart';
 
 class StudentCard extends StatefulWidget {
@@ -18,6 +18,8 @@ final TextEditingController _sessionController = TextEditingController();
 final TextEditingController _campusController = TextEditingController();
 final TextEditingController _deciplineController = TextEditingController();
 final TextEditingController _phoneController = TextEditingController();
+final TextEditingController _cnicController = TextEditingController();
+final TextEditingController _addressController = TextEditingController();
 
 class _StudentCardState extends State<StudentCard> {
   @override
@@ -33,7 +35,24 @@ class _StudentCardState extends State<StudentCard> {
 
     // Date picking and update the field
     Future<void> _selectDate() async {
-      
+      final DateTime? pickedDate = await showDatePicker(
+        context: context,
+          initialDate: DateTime.now(),
+          firstDate: DateTime(2000),
+          lastDate: DateTime(2026),
+      );
+        if(pickedDate != null ) {
+          setState(() {
+            _sessionController.text = DateFormat('M/d/yyyy').format(pickedDate);
+          });
+        }
+    }
+
+    // to clean-up the memory
+    @override
+    void dispose() {
+      _sessionController.dispose();
+      super.dispose();
     }
 
     return Scaffold(
@@ -124,6 +143,12 @@ class _StudentCardState extends State<StudentCard> {
                 controller: _sessionController,
                 hintText: 'Session(batch)',
                 preIcons: Icon(Icons.schedule),
+                suffIcon: IconButton(
+                  icon: Icon(Icons.calendar_month,),
+                  onPressed: () {
+                    _selectDate();
+                  },
+                ),
             ),
             const SizedBox(height: 6,),
 
@@ -149,6 +174,24 @@ class _StudentCardState extends State<StudentCard> {
                 hintText: 'Phone No',
                 keyboardType: TextInputType.phone,
                 preIcons: Icon(Icons.phone),
+            ),
+            const SizedBox(height: 6),
+
+            // CNIC inputField
+            Myinputfield(
+                controller: _cnicController,
+                hintText: 'CNIC',
+                keyboardType: TextInputType.phone,
+                preIcons: Icon(Icons.badge),
+            ),
+            const SizedBox(height: 6),
+
+            // address inputField
+            Myinputfield(
+                controller: _addressController,
+                hintText: 'Address',
+                keyboardType: TextInputType.text,
+                preIcons: Icon(Icons.location_on),
             ),
             const SizedBox(height: 6),
 
@@ -190,11 +233,35 @@ class _StudentCardState extends State<StudentCard> {
             ),
             const SizedBox(height: 6),
 
-            MyButton(text: 'Appy', onPressed: () {}),
+
+            MyButton(
+             text: 'Appy',
+             onPressed: () {
+               _afterApplyPress(context);
+            }),
             
           ], // column-children
         ),
       ),
     );
   }
+}
+
+
+// making SnackBar
+void _afterApplyPress(BuildContext context) {
+  const snackBar = SnackBar(
+    duration: Duration(seconds: 3),
+      behavior: SnackBarBehavior.floating,
+      margin: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+      content: Text('🎉 Successfully applied for Student Card!!'),
+      shape: RoundedRectangleBorder(side: BorderSide(width: 1, color: Colors.black45,),
+          borderRadius: BorderRadius.all(Radius.circular(15))
+      ),
+    backgroundColor: Colors.green,
+    elevation: 20,
+  );
+
+  //Show the SnackBar using the Scaffold Messenger
+  ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
