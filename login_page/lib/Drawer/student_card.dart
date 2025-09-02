@@ -136,23 +136,23 @@ class _StudentCardState extends State<StudentCard> {
             //student name inputField
             Myinputfield(
                 controller: _studentNameController,
-                hintText: 'Student Name',
+                label: 'Student Name',
                 preIcons: Icon(Icons.account_circle),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
             //father name inputField
             Myinputfield(
                 controller: _fatherNameController,
-                hintText: 'Father Name',
+                label: 'Father Name',
                 preIcons: Icon(Icons.family_restroom),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
             // session name
             Myinputfield(
                 controller: _sessionController,
-                hintText: 'Session(batch)',
+                label: 'Session(batch)',
                 preIcons: Icon(Icons.schedule),
                 suffIcon: IconButton(
                   icon: Icon(Icons.calendar_month,),
@@ -161,88 +161,84 @@ class _StudentCardState extends State<StudentCard> {
                   },
                 ),
             ),
-            const SizedBox(height: 6,),
+            const SizedBox(height: 13,),
 
             // campus name
             Myinputfield(
                 controller: _campusController,
-                hintText: 'Campus',
+                label: 'Campus',
                 preIcons: Icon(Icons.school),
             ),
-            const SizedBox(height: 6,),
+            const SizedBox(height: 13,),
 
               // decipline inputField
             Myinputfield(
                 controller: _deciplineController,
-                hintText: 'Decipline',
+                label: 'Decipline',
                 preIcons: Icon(Icons.computer),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
             // semester inputField
             Myinputfield(
                 controller: _phoneController,
-                hintText: 'Phone No',
+                label: 'Phone No',
                 keyboardType: TextInputType.phone,
                 preIcons: Icon(Icons.phone),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
             // CNIC inputField
             Myinputfield(
                 controller: _cnicController,
-                hintText: 'CNIC',
+                label: 'CNIC',
                 keyboardType: TextInputType.phone,
                 preIcons: Icon(Icons.badge),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
             // address inputField
             Myinputfield(
                 controller: _addressController,
-                hintText: 'Address',
+                label: 'Address',
                 keyboardType: TextInputType.text,
                 preIcons: Icon(Icons.location_on),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
             // Upload recipt inputField
             Myinputfield(
               // enableDisable: false,
               readOnly: true,
-              controller: _sessionController,
-              hintText: 'Upload Bank Recipt',
+              label: 'Upload Bank Recipt',
               preIcons: Icon(Icons.upload),
               suffIcon: Icon(Icons.photo),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
             // cardFee inputField
             Myinputfield(
                 enableDisable: false,
-                controller: _sessionController,
                 hintText: 'Card Fee: 200 PKR',
                 preIcons: Icon(Icons.credit_card,),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
             // issueDate inputField
             Myinputfield(
               enableDisable: false,
-                controller: _sessionController,
                 hintText: 'Issue Date: $formattedIssueDate',
                 preIcons: Icon(Icons.event_note,),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
             // lastDate inputField
             Myinputfield(
               enableDisable: false,
-                controller: _sessionController,
                 hintText: 'Last Date: $formattedLastDate',
                 preIcons: Icon(Icons.calendar_month,),
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 13),
 
 
             MyButton(

@@ -5,23 +5,26 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 class Myinputfield extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String? hintText;
   final Icon preIcons;
   final Widget? suffIcon;
   final bool enableDisable;
   final bool readOnly;
   final TextInputType keyboardType;
+  final String? label;
 
   const Myinputfield({
     super.key,
-    required this.controller,
-    required this.hintText,
+    this.hintText,
     required this.preIcons,
+    this.label,
+    this.controller,
     this.suffIcon,
     this.enableDisable = true,
     this.readOnly = false,
     this.keyboardType = TextInputType.text,
+
   });
 
   @override
@@ -34,8 +37,14 @@ class Myinputfield extends StatelessWidget {
         enabled: enableDisable,
         readOnly: readOnly,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 7),
+          contentPadding: EdgeInsets.fromLTRB(25, 20, 12, 12),
           hintText: hintText,
+          label: label != null
+          ? Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+          )
+          : null,
+
           prefixIcon: preIcons,
           suffixIcon: suffIcon,
           filled: true,

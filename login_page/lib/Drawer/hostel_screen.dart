@@ -74,7 +74,7 @@ class _HostelScreenState extends State<HostelScreen> {
           Myinputfield(
               controller: _distanceController,
               hintText: 'Distance from AWKUM (in Kilometers)',
-              preIcons: Icon(Icons.location_on),//////////////////////......////'
+              preIcons: Icon(Icons.location_on),
 
           ),
 
