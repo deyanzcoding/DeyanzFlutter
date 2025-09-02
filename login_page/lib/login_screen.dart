@@ -155,12 +155,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       prefixIcon: const Icon(Icons.alternate_email, color: Color(0xff323F4B)),
                       fillColor: const Color(0xffF8F9FA),
                       filled: true,
+
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: _isError ? Colors.red : const Color(0xffE4E7EB),
                         ),
                         borderRadius: const BorderRadius.all(Radius.circular(20)),
                       ),
+
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: _isError ? Colors.red : const Color(0xffE4E7EB),

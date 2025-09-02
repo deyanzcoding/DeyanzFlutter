@@ -13,6 +13,7 @@ class Myinputfield extends StatelessWidget {
   final bool readOnly;
   final TextInputType keyboardType;
   final String? label;
+  final String? Function(String?)? boxValidator;
 
   const Myinputfield({
     super.key,
@@ -23,6 +24,7 @@ class Myinputfield extends StatelessWidget {
     this.suffIcon,
     this.enableDisable = true,
     this.readOnly = false,
+    this.boxValidator,
     this.keyboardType = TextInputType.text,
 
   });
@@ -66,6 +68,7 @@ class Myinputfield extends StatelessWidget {
           ),
 
         ),
+        validator: boxValidator,
       ),
     );
   }
