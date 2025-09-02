@@ -16,7 +16,11 @@ class _FeeHistoryState extends State<FeeHistory> {
       appBar: AppBar(
         title: const Text('Fee History'),
         backgroundColor: AppColors.appThemeBold,
+        foregroundColor: Colors.white,
       ),
+
+      
+
     );
   }
 }

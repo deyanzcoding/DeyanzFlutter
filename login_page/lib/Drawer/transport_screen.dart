@@ -93,8 +93,8 @@ class _TransportScreenState extends State<TransportScreen> {
                 if (value == null || value.isEmpty) {
                   return 'Enter distance';
                 }
-                final distance = double.tryParse(value);
-                if (distance == null || distance <= 0) {
+                final tC = double.tryParse(value);
+                if (tC == null || tC <= 0) {
                   return 'Enter a positive number';
                 }
                 return null;
@@ -112,8 +112,8 @@ class _TransportScreenState extends State<TransportScreen> {
                 if (value == null || value.isEmpty) {
                   return 'Enter CGPA';
                 }
-                final cgpa = double.tryParse(value);
-                if (cgpa == null || cgpa < 0.0 || cgpa > 4.0) {
+                final tCs = double.tryParse(value);
+                if (tCs == null || tCs < 0.0 || tCs > 4.0) {
                   return 'Enter CGPA between 0.0 and 4.0';
                 }
                 return null;
