@@ -484,11 +484,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(height: 15,),
 
+              // task and progress
               Padding(
                 padding: const EdgeInsets.only(right:190.0),
-                child: Text('Tasks & Progress', style: TextStyle(fontFamily: 'Rubik Medium'),),
+                child: Text('Tasks & Progress', style: TextStyle(fontSize: 17,fontFamily: 'Rubik Medium'),),
               ),
 
+              // attendence, quizes, assignment, classess
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -505,9 +507,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey,
-                              blurRadius: 10,
-                              offset: Offset(0, 10),
-                              spreadRadius: 5,
+                              blurRadius: 6,
+                              offset: Offset(0, 2),
+                              spreadRadius: 3,
                 
                             ),
                           ],
@@ -537,9 +539,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey,
-                              blurRadius: 10,
-                              offset: Offset(0, 10),
-                              spreadRadius: 5,
+                              blurRadius: 6,
+                              offset: Offset(0, 2),
+                              spreadRadius: 3,
 
                             ),
                           ],
@@ -569,10 +571,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey,
-                              blurRadius: 10,
-                              offset: Offset(0, 10),
-                              spreadRadius: 5,
-
+                              blurRadius: 6,
+                              offset: Offset(0, 2),
+                              spreadRadius: 3,
                             ),
                           ],
                         ),
@@ -601,9 +602,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey,
-                              blurRadius: 10,
-                              offset: Offset(0, 10),
-                              spreadRadius: 5,
+                              blurRadius: 6,
+                              offset: Offset(0, 2),
+                              spreadRadius: 3,
 
                             ),
                           ],
@@ -625,9 +626,156 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(height: 15,),
+
+
+
+
+              // upcoming deadlines
+              Padding(
+                padding: const EdgeInsets.only(right:165.0),
+                child: Text('Upcoming Deadlines', style: TextStyle(fontSize: 17, fontFamily: 'Rubik Medium'),),
+              ),
+
+              // attendence, quizes, assignment, classess
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10.0, bottom: 10, right: 5, left: 10),
+                      child: Container(
+                        width: 280,
+                        height: 170,
+                        decoration: BoxDecoration(
+                          color: Color(0xff_71_00_00),
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              offset: Offset(0, 10),
+                              spreadRadius: 5,
+
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 15, bottom: 15),
+                          child: Column(
+                            children: [
+                              Text('Semester Fee', style: TextStyle(fontSize: 19, fontWeight: FontWeight.w700, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                              SizedBox(height: 10,),
+                              Text('Last date: Sep 10, 2025', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Remaining days: 5', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Total fee: 65,000', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 10),
+                      child: Container(
+                        width: 280,
+                        height: 170,
+                        decoration: BoxDecoration(
+                          color: Color(0xff_71_00_00),
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              offset: Offset(0, 10),
+                              spreadRadius: 5,
+
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 15, bottom: 15),
+                          child: Column(
+                            children: [
+                              Text('Hostel Fee', style: TextStyle(fontSize: 19, fontWeight: FontWeight.w700, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                              SizedBox(height: 10,),
+                              Text('Last date: Jan 20, 2026', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Remaining days: 29', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Total fee: 48,000', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10),
+                      child: Container(
+                        width: 280,
+                        height: 170,
+                        decoration: BoxDecoration(
+                          color: Color(0xff_71_00_00),
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              offset: Offset(0, 10),
+                              spreadRadius: 5,
+
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 15, bottom: 15),
+                          child: Column(
+                            children: [
+                              Text('Tour Trip', style: TextStyle(fontSize: 19, fontWeight: FontWeight.w700, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                              SizedBox(height: 10,),
+                              Text('Last date: Tomarrow', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Remaining days: 1', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Total fee: 1,500', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 10),
+                      child: Container(
+                        width: 280,
+                        height: 170,
+                        decoration: BoxDecoration(
+                          color: Color(0xff_71_00_00),
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              offset: Offset(0, 10),
+                              spreadRadius: 5,
+
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 15, bottom: 15),
+                          child: Column(
+                            children: [
+                              Text('Enterpreneurship Program', style: TextStyle(fontSize: 19, fontWeight: FontWeight.w700, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                              SizedBox(height: 10,),
+                              Text('Date: March 01, 2025', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Remaining days: 5', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Totally free', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300, color: Colors.white, )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
               )
-
-
 
             ],
           ),

@@ -1,69 +1,43 @@
-# login_page
+# Student Portal App (Abdul Wali Khan University LMS)
 
-A new Flutter project. I am practice on Login page.
+A Flutter-based mobile application designed as a student portal for managing academic and university-related information. This app includes a home dashboard, bottom navigation for key sections (Home, Attendance, Quiz, Assignment), and features like student profiles, progress summaries, quick actions, and upcoming deadlines.
 
-## Getting Started
-App Testing Flow
+## Table of Contents
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-1. First Launch (No Credentials)
+## Features
+- **Student Dashboard**: Displays student details (e.g., name, ID, campus) and progress metrics (e.g., CGPA, attendance).
+- **Bottom Navigation**: Navigate between Home, Attendance, Quiz, and Assignment screens.
+- **Quick Actions**: Access schedules, grades, and other tasks with tappable buttons.
+- **Upcoming Deadlines**: View a carousel of upcoming assignment and exam deadlines.
+- **Drawer Menu**: Access additional features like Student Card, Hostel Facility, Transport Facility, Fee History, and Logout.
+- **Responsive Design**: Optimized for mobile devices with a modern, attractive UI.
 
-When the app is opened for the first time:
-isLoggedIn is false by default.
-The app shows LoginScreen.
-User clicks "Sign Up" → navigates to SignupScreen.
-
-2. Signup
-
-User enters valid signup details:
-Name: John
-Email: john@example.com
-Password: password123
-Confirm Password: password123
-After clicking "SIGN UP":
-The form validates the inputs.
-Credentials are saved.
-isLoggedIn is set to true.
-The app navigates to HomeScreen.
-
-3. Logout
-
-On HomeScreen, the user clicks "Logout":
-isLoggedIn is set to false.
-The app navigates back to LoginScreen.
-Saved credentials (username, useremail, userpassword) remain stored.
-
-4. Login
-
-On LoginScreen, the user enters their saved credentials:
-Email: john@example.com
-Password: password123
-After clicking "LOGIN":
-The credentials are validated.
-isLoggedIn is set to true.
-The app navigates to HomeScreen.
-
-5. App Restart
-
-When the app is closed and reopened:
-If isLoggedIn = true, it opens HomeScreen.
-If isLoggedIn = false, it opens LoginScreen.
-
-✅ Summary (short):
-
-First Launch → LoginScreen → Sign Up → HomeScreen
-Logout → LoginScreen (credentials stored)
-Login → HomeScreen
-Restart → Check isLoggedIn → Open correct screen
+## Screenshots
+*(Add screenshots of the app here after running it. Example:)*
+![Home Screen](screenshots/home_screen.png)
+![Attendance Screen](screenshots/attendance_screen.png)
+![Drawer Menu](screenshots/drawer_menu.png)
 
 
+## Installation
 
+### Prerequisites
+- [Flutter SDK](https://flutter.dev/docs/get-started/install) installed (version 3.x recommended).
+- [Dart](https://dart.dev/get-dart) installed.
+- An IDE like [Visual Studio Code](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio) with Flutter plugin.
+- Android Emulator or iOS Simulator (or a physical device).
 
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Steps
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/student-portal-app.git
+   cd student-portal-app

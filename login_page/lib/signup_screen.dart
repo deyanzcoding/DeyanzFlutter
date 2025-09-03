@@ -106,6 +106,38 @@ class _SignupScreenState extends State<SignupScreen> {
                       style: const TextStyle(color: Colors.red, fontSize: 14),
                     ),
                   ),
+                const SizedBox(height: 10),
+
+                // Email TextFormField
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: TextFormField(
+                    controller: _nameController,
+                    keyboardType: TextInputType.name,
+                    decoration: InputDecoration(
+                      hintText: 'Name',
+                      prefixIcon: const Icon(Icons.account_circle, color: Color(0xff323f4B)),
+                      fillColor: const Color(0xffF8F9FA),
+                      filled: true,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Color(0xffE4E7EB)),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(color: Color(0xffE4E7EB)),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter you name.';
+                      }
+
+                      return null;
+                    },
+                  ),
+                ),
+                const SizedBox(height: 10),
 
                 // Email TextFormField
                 Padding(
