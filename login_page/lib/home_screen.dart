@@ -87,8 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: FaIcon(FontAwesomeIcons.page4),
               label: 'Assignment',
           ),
-
-
         ],
 
         currentIndex: _selectedIndex,
@@ -526,6 +524,112 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              SizedBox(height: 7,),
+
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                      child: Container(
+                        width: 125,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Color(0xff_71_00_00),
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              offset: Offset(0, 10),
+                              spreadRadius: 5,
+                
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 15, bottom: 15),
+                          child: Column(
+                            children: [
+                              Text('Attendence', style: TextStyle(fontSize: 17, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                              SizedBox(height: 10,),
+                              Text('Presenty: 87.5%', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Absenty: 13.5%', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Status: good', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white, )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10),
+                      child: Container(
+                        width: 125,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Color(0xff_71_00_00),
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              offset: Offset(0, 10),
+                              spreadRadius: 5,
+
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 15, bottom: 15),
+                          child: Column(
+                            children: [
+                              Text('Quizes', style: TextStyle(fontSize: 17, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                              SizedBox(height: 10,),
+                              Text('Total: 5', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Gives: 4', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Absent: 1', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white, )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10),
+                      child: Container(
+                        width: 125,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Color(0xff_71_00_00),
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              offset: Offset(0, 10),
+                              spreadRadius: 5,
+
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 15, bottom: 15),
+                          child: Column(
+                            children: [
+                              Text('Assignments', style: TextStyle(fontSize: 16, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                              SizedBox(height: 10,),
+                              Text('Total: 4', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Submitted: 3', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('Accepted: 3', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white, )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
 
             ],
           ),
@@ -535,42 +639,3 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-
-// Placeholder widget for Attendance
-class AttendanceScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Attendance Screen',
-        style: TextStyle(fontSize: 24, fontFamily: 'Rubik Regular'),
-      ),
-    );
-  }
-}
-
-// Placeholder widget for Quiz
-class QuizScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Quiz Screen',
-        style: TextStyle(fontSize: 24, fontFamily: 'Rubik Regular'),
-      ),
-    );
-  }
-}
-
-// Placeholder widget for Assignment
-class AssignmentScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Assignment Screen',
-        style: TextStyle(fontSize: 24, fontFamily: 'Rubik Regular'),
-      ),
-    );
-  }
-}
