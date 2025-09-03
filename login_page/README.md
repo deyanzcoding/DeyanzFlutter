@@ -51,10 +51,10 @@ student profiles, progress summaries, quick actions, and upcoming deadlines.
    ```bash
    git clone https://github.com/your-username/student-portal-app.git
    cd student-portal-app
-   
 
 
 
+```bash
 ## Project Structure
 student-portal-app/
 ├── android/          # Android configuration
@@ -70,6 +70,7 @@ student-portal-app/
 │       └── deyan_white.png
 ├── pubspec.yaml      # Project configuration and dependencies
 └── README.md         # This file
+
 
 
 ## Dependencies
