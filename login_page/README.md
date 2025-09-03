@@ -14,7 +14,6 @@ student profiles, progress summaries, quick actions, and upcoming deadlines.
 
 ## Features
 - **Student Dashboard**: Displays student details (e.g., name, ID, campus) and progress metrics.
-- **Bottom Navigation**: Showcase the academic records Attendance, Quiz, Assignments.
 - **Upcoming Deadlines**: View a carousel of upcoming assignment and exam deadlines.
 - **Drawer Menu**: Access additional features like Student Card, Hostel Facility, Transport Facility, Fee History, and Logout.
 - **Responsive Design**: Optimized for mobile devices with a modern, attractive UI.
