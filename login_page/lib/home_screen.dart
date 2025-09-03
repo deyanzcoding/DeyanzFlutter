@@ -18,11 +18,25 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String username = "";
+  int _selectedIndex = 0;
 
   @override
   void initState() {
     super.initState();
     _loadUsername();
+  }
+
+  final List<Widget> _screens = [
+    HomeScreen(),
+    HostelScreen(),
+    FeeHistory(),
+    TransportScreen(),
+  ];
+
+  void onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   Future<void> _loadUsername() async {
@@ -51,7 +65,37 @@ class _HomeScreenState extends State<HomeScreen> {
         foregroundColor: Colors.white,
       ),
 
-      // bottomNavigationBar: ,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        items: [
+          BottomNavigationBarItem(
+             icon: FaIcon(FontAwesomeIcons.home),
+              label: 'Home',
+          ),
+          
+          BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.chartArea),
+              label: 'Attendence',
+          ),
+
+          BottomNavigationBarItem(
+              icon: FaIcon(FontAwesomeIcons.noteSticky),
+              label: 'Quiz',
+          ),
+
+          BottomNavigationBarItem(
+            icon: FaIcon(FontAwesomeIcons.page4),
+              label: 'Assignment',
+          ),
+
+
+        ],
+
+        currentIndex: _selectedIndex,
+        selectedItemColor: AppColors.appThemeBold,
+        type: BottomNavigationBarType.fixed,
+        onTap: onItemTapped,
+      ),
 
       //drawer (sidebar items)
       drawer: SafeArea(
@@ -486,6 +530,46 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+
+// Placeholder widget for Attendance
+class AttendanceScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        'Attendance Screen',
+        style: TextStyle(fontSize: 24, fontFamily: 'Rubik Regular'),
+      ),
+    );
+  }
+}
+
+// Placeholder widget for Quiz
+class QuizScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        'Quiz Screen',
+        style: TextStyle(fontSize: 24, fontFamily: 'Rubik Regular'),
+      ),
+    );
+  }
+}
+
+// Placeholder widget for Assignment
+class AssignmentScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        'Assignment Screen',
+        style: TextStyle(fontSize: 24, fontFamily: 'Rubik Regular'),
       ),
     );
   }
