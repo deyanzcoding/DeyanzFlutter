@@ -8,11 +8,8 @@ student profiles, progress summaries, quick actions, and upcoming deadlines.
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Dependencies](#dependencies)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -24,9 +21,14 @@ student profiles, progress summaries, quick actions, and upcoming deadlines.
 
 ## Screenshots
 *(Add screenshots of the app here after running it. Example:)*
-![Home Screen](screenshots/home_screen.png)
-![Attendance Screen](screenshots/attendance_screen.png)
-![Drawer Menu](screenshots/drawer_menu.png)
+![Home Screen](assets/screenshots/homeScreen.jpg)
+![Fee History](assets/screenshots/feeHistory.jpg)
+![Hostel Apply](assets/screenshots/hostelApply.jpg)
+![Login Screen](assets/screenshots/login.jpg)
+![Sign UP](assets/screenshots/signUp.jpg)
+![Slide Drawer](assets/screenshots/slideDrawer.jpg)
+![Student Card](assets/screenshots/studentCard.jpg)
+![Transport Apply](assets/screenshots/transpostApply.jpg)
 
 
 ## Installation
@@ -46,7 +48,7 @@ student profiles, progress summaries, quick actions, and upcoming deadlines.
 
 
 
-## Project
+## Project Structure
 student-portal-app/
 ├── android/          # Android configuration
 ├── ios/              # iOS configuration
@@ -63,10 +65,22 @@ student-portal-app/
 └── README.md         # This file
 
 
+## Dependencies
+   dependencies:
+   flutter:
+   sdk: flutter
+
+  -  cupertino_icons: ^1.0.8
+  -  shared_preferences: ^2.5.3
+  -  font_awesome_flutter: 10.9.1
+  -  intl: ^0.20.2
+
+##Conta
+
 
 ### Notes for Customization
 1. **Screenshots**: Replace the placeholder screenshot links with actual images. Create a `screenshots` folder and add images after running the app.
 2. **Repository URL**: Update the `git clone` URL with your GitHub repository link.
-3. **Author Details**: Replace `[Your Name]`, `[your-email@example.com]`, and `[https://github.com/your-username]` with your personal information.
+3. **Author Details**: Replace `Deyan Ahmad`, `deyanzcoding@gmail.com`, and `[https://github.com/deyanzcoding]` with your personal information.
 4. **License**: If you don’t have a `LICENSE` file, create one or remove the License section.
 5. **Dependencies**: Verify the versions in `pubspec.yaml` and update them if necessary.
