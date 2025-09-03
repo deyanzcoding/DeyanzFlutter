@@ -26,18 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
     _loadUsername();
   }
 
-  final List<Widget> _screens = [
-    HomeScreen(),
-    HostelScreen(),
-    FeeHistory(),
-    TransportScreen(),
-  ];
-
-  void onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   Future<void> _loadUsername() async {
     final prefs = await SharedPreferences.getInstance();
@@ -63,36 +51,6 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Home Screen'),
         backgroundColor: AppColors.appThemeBold,
         foregroundColor: Colors.white,
-      ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        items: [
-          BottomNavigationBarItem(
-             icon: FaIcon(FontAwesomeIcons.home),
-              label: 'Home',
-          ),
-          
-          BottomNavigationBarItem(
-          icon: FaIcon(FontAwesomeIcons.chartArea),
-              label: 'Attendence',
-          ),
-
-          BottomNavigationBarItem(
-              icon: FaIcon(FontAwesomeIcons.noteSticky),
-              label: 'Quiz',
-          ),
-
-          BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.page4),
-              label: 'Assignment',
-          ),
-        ],
-
-        currentIndex: _selectedIndex,
-        selectedItemColor: AppColors.appThemeBold,
-        type: BottomNavigationBarType.fixed,
-        onTap: onItemTapped,
       ),
 
       //drawer (sidebar items)
@@ -524,7 +482,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 7,),
+              SizedBox(height: 15,),
+
+              Padding(
+                padding: const EdgeInsets.only(right:190.0),
+                child: Text('Tasks & Progress', style: TextStyle(fontFamily: 'Rubik Medium'),),
+              ),
 
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -627,9 +590,44 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 10),
+                      child: Container(
+                        width: 125,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Color(0xff_71_00_00),
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 10,
+                              offset: Offset(0, 10),
+                              spreadRadius: 5,
+
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10, top: 15, bottom: 15),
+                          child: Column(
+                            children: [
+                              Text('Classes', style: TextStyle(fontSize: 16, color: Colors.white, fontFamily: 'Rubik Medium'),),
+                              SizedBox(height: 10,),
+                              Text('Database: 27/32', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('L.Algebra: 5/32', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('OOP: 31/32', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                              Text('DSA: 32/32', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white, )),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               )
+
+
 
             ],
           ),
