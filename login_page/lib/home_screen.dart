@@ -51,6 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
         foregroundColor: Colors.white,
       ),
 
+      // bottomNavigationBar: ,
+
       //drawer (sidebar items)
       drawer: SafeArea(
         child: Padding(
