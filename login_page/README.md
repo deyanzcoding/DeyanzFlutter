@@ -54,8 +54,9 @@ student profiles, progress summaries, quick actions, and upcoming deadlines.
 
 
 
+
+## **Project Structure**
 ```bash
-## Project Structure
 student-portal-app/
 ├── android/          # Android configuration
 ├── ios/              # iOS configuration
@@ -70,7 +71,7 @@ student-portal-app/
 │       └── deyan_white.png
 ├── pubspec.yaml      # Project configuration and dependencies
 └── README.md         # This file
-
+```
 
 
 ## Dependencies
