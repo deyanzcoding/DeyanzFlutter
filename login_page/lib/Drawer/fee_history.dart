@@ -144,6 +144,7 @@ class _FeeHistoryState extends State<FeeHistory> {
               ),
             ),
 
+            MyButton(text: 'Report any problem', onPressed: (){}),
           ],
         ),
       ),
