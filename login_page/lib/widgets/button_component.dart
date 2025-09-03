@@ -47,7 +47,7 @@ class MyMediumButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 30,
+      height: 25,
       width: 120,
       decoration: BoxDecoration(
         color: Colors.green,
