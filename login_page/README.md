@@ -20,13 +20,21 @@ student profiles, progress summaries, quick actions, and upcoming deadlines.
 
 ## Screenshots
 *(Add screenshots of the app here after running it. Example:)*
+**Home Screen**
 ![Home Screen](assets/screenshots/homeScreen.jpg)
+**Fee History**
 ![Fee History](assets/screenshots/feeHistory.jpg)
+**Hostel Apply**
 ![Hostel Apply](assets/screenshots/hostelApply.jpg)
+**Login Screen**
 ![Login Screen](assets/screenshots/login.jpg)
+**Sign UP**
 ![Sign UP](assets/screenshots/signUp.jpg)
+**Slide Drawer**
 ![Slide Drawer](assets/screenshots/slideDrawer.jpg)
+**Student Card**
 ![Student Card](assets/screenshots/studentCard.jpg)
+**Transport Apply**
 ![Transport Apply](assets/screenshots/transpostApply.jpg)
 
 
