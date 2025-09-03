@@ -70,17 +70,10 @@ student-portal-app/
    flutter:
    sdk: flutter
 
-  -  cupertino_icons: ^1.0.8
-  -  shared_preferences: ^2.5.3
-  -  font_awesome_flutter: 10.9.1
-  -  intl: ^0.20.2
+* cupertino_icons: ^1.0.8
+* shared_preferences: ^2.5.3
+* font_awesome_flutter: 10.9.1
+* intl: ^0.20.2
 
-##Conta
-
-
-### Notes for Customization
-1. **Screenshots**: Replace the placeholder screenshot links with actual images. Create a `screenshots` folder and add images after running the app.
-2. **Repository URL**: Update the `git clone` URL with your GitHub repository link.
-3. **Author Details**: Replace `Deyan Ahmad`, `deyanzcoding@gmail.com`, and `[https://github.com/deyanzcoding]` with your personal information.
-4. **License**: If you don’t have a `LICENSE` file, create one or remove the License section.
-5. **Dependencies**: Verify the versions in `pubspec.yaml` and update them if necessary.
+## Contact
+   **Email:** [deyanzcoding@gmail.com]()
