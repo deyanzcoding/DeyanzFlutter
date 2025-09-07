@@ -20,6 +20,7 @@ class _ExamplemodelState extends State<Examplemodel> {
     );
     var data = jsonDecode(response.body.toString());
 
+    print(data);
     if (response.statusCode == 200) {
       for (Map i in data) {
         Photos photos = Photos(title: i['title'], url: i['url'], id: i['id']);
@@ -36,31 +37,27 @@ class _ExamplemodelState extends State<Examplemodel> {
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text('Api Practice')),
 
-      body: Column(
-        children: [
-          Expanded(
-            child: FutureBuilder(
-              future: getPhotos(),
-              builder: (context, AsyncSnapshot<List<Photos>> snapshot) {
-                return ListView.builder(
-                  itemCount: photosList.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                          snapshot.data![index].url.toString(),
-                        ),
-                      ),
-                      subtitle: Text(snapshot.data![index].title.toString()),
-                      title: Text('Notes id:' + snapshot.data![index].id.toString(),
-                      ),
-                    );
-                  },
+      body: Expanded(
+        child: FutureBuilder(
+          future: getPhotos(),
+          builder: (context, AsyncSnapshot<List<Photos>> snapshot) {
+            return ListView.builder(
+              itemCount: photosList.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                      snapshot.data![index].url.toString(),
+                    ),
+                  ),
+                  subtitle: Text(snapshot.data![index].title.toString()),
+                  title: Text('Notes id:${snapshot.data![index].id}',
+                  ),
                 );
               },
-            ),
-          ),
-        ],
+            );
+          },
+        ),
       ),
     );
   }
