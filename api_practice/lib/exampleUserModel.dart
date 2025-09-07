@@ -54,10 +54,11 @@ class _ExampleUserModelState extends State<ExampleUserModel> {
                       child: Column(
                         children: [
                          ReusableRow(title: 'Name', value: snapshot.data![index].name.toString()),
-                         ReusableRow(title: 'username', value: snapshot.data![index].username.toString()),
-                         ReusableRow(title: 'email', value: snapshot.data![index].email.toString()),
+                         ReusableRow(title: 'Username', value: snapshot.data![index].username.toString()),
+                         ReusableRow(title: 'Email', value: snapshot.data![index].email.toString()),
                          ReusableRow(title: 'Address', value: snapshot.data![index].address!.city.toString()),
-                         ReusableRow(title: 'Geo', value: snapshot.data![index].address!.geo!.lat.toString()),
+                         ReusableRow(title: 'Company', value: snapshot.data![index].address!.city.toString()),
+                         ReusableRow(title: 'Geo', value: snapshot.data![index].company!.name.toString()),
                         ],
                       ),
                     ),
