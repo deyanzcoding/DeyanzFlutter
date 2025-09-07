@@ -22,7 +22,7 @@ class _ExamplemodelState extends State<Examplemodel> {
 
     if (response.statusCode == 200) {
       for (Map i in data) {
-        Photos photos = Photos(title: i['title'], url: i['url']);
+        Photos photos = Photos(title: i['title'], url: i['url'], id: i['id']);
         photosList.add(photos);
       }
       return photosList;
@@ -38,14 +38,23 @@ class _ExamplemodelState extends State<Examplemodel> {
 
       body: Column(
         children: [
-          Expanded( 
+          Expanded(
             child: FutureBuilder(
               future: getPhotos(),
-              builder: (context, snapshot) {
+              builder: (context, AsyncSnapshot<List<Photos>> snapshot) {
                 return ListView.builder(
                   itemCount: photosList.length,
                   itemBuilder: (context, index) {
-                    return ListTile(title: Text('Deyan Ahmad'));
+                    return ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          snapshot.data![index].url.toString(),
+                        ),
+                      ),
+                      subtitle: Text(snapshot.data![index].title.toString()),
+                      title: Text('Notes id:' + snapshot.data![index].id.toString(),
+                      ),
+                    );
                   },
                 );
               },
@@ -59,6 +68,7 @@ class _ExamplemodelState extends State<Examplemodel> {
 
 class Photos {
   String title, url;
+  int id;
 
-  Photos({required this.title, required this.url});
+  Photos({required this.id, required this.title, required this.url});
 }
