@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'post_models.dart';
+import 'Models/post_models.dart';
+import 'Models/post_models.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
