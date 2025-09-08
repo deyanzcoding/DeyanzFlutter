@@ -11,7 +11,7 @@ class Exampleusermodel2 extends StatefulWidget {
 }
 
 class _Exampleusermodel2State extends State<Exampleusermodel2> {
-  var data;
+  List<dynamic> data = [];
 
   Future<void> getUserApi() async {
     final response = await http.get(
@@ -26,7 +26,7 @@ class _Exampleusermodel2State extends State<Exampleusermodel2> {
 
     }
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +45,18 @@ class _Exampleusermodel2State extends State<Exampleusermodel2> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return Text('Loading');
                 } else {
-                  return Text(data[0]['name'].toString());
+                  return ListView.builder(
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: Column(
+                          children: [
+                            ReusableRow(title: 'name', value: data[index]['name'].toString(),),
+                            ReusableRow(title: 'username', value: data[index]['username'].toString(),),
+                          ],
+                        ),
+                      );
+                    });
                 }
               },
             ),
@@ -55,3 +66,21 @@ class _Exampleusermodel2State extends State<Exampleusermodel2> {
     );
   }
 }
+
+class ReusableRow extends StatelessWidget {
+
+  String title, value;
+  ReusableRow({super.key, required this.title, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(title),
+        Text(value),
+      ],
+    );
+  }
+}
+
