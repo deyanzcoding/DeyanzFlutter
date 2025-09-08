@@ -16,8 +16,8 @@ class _ExampleMyOwnModelState extends State<ExampleMyOwnModel> {
 
   Future<MyOwnUserApi> getProductsApi () async {
     final response = await http.get(Uri.parse('https://webhook.site/084ee7eb-9208-4972-915c-176ef8295700'));
-
         var data = jsonDecode(response.body.toString());
+
         if(response.statusCode == 200) {
           return MyOwnUserApi.fromJson(json);
         } else {
@@ -41,9 +41,14 @@ class _ExampleMyOwnModelState extends State<ExampleMyOwnModel> {
                 future: getProductsApi(),
                   builder: (context, snapshot) {
                       return ListView.builder(
-                        itemCount: snapshot.data!.data!.length,
+                        // itemCount: snapshot.data!.data!.length,
+                        itemCount: 300,
                         itemBuilder: (context, index) {
-
+                          return Column(
+                            children: [
+                              Text(index.toString()),
+                            ],
+                          );
                         },
                       );
                   })
