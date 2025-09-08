@@ -11,21 +11,20 @@ class Exampleusermodel2 extends StatefulWidget {
 }
 
 class _Exampleusermodel2State extends State<Exampleusermodel2> {
+  var data;
 
-  var data ;
-  Future<void> getUserApi () async {
-    final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
+  Future<void> getUserApi() async {
+    final response = await http.get(
+      Uri.parse('https://jsonplaceholder.typicode.com/users'),
+    );
 
-    if(response.statusCode == 200) {
-      for(Map i in data) {
+    if (response.statusCode == 200) {
+      for (Map i in data) {
         data = jsonDecode(response.body.toString());
-        
       }
-      return data;
     } else {
 
     }
-
   }
 
   @override
@@ -40,19 +39,16 @@ class _Exampleusermodel2State extends State<Exampleusermodel2> {
       body: Column(
         children: [
           Expanded(
-              child:
-              FutureBuilder(
-                future: getUserApi(),
-                builder: (context, snapshot) {
-
-                  if(snapshot.connectionState == ConnectionState.waiting) {
-                    return Text('Loading');
-                  } else {
-                  return Text('');
-                  }
-                },
-             )
-
+            child: FutureBuilder(
+              future: getUserApi(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Text('Loading');
+                } else {
+                  return Text(data[0]['name'].toString());
+                }
+              },
+            ),
           ),
         ],
       ),
