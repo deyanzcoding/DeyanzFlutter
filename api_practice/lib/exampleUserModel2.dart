@@ -60,7 +60,7 @@ class _Exampleusermodel2State extends State<Exampleusermodel2> {
                             ReusableRow(title: 'zipcode', value: data[index]['address']['zipcode'].toString(),),
                             ReusableRow(title: 'geo', value: data[index]['address']['geo'].toString(),),
                             ReusableRow(title: 'geo-lat', value: data[index]['address']['geo']['lat'].toString(),),
-                            ReusableRow(title: 'geo-lat', value: data[index]['address']['geo']['lat'].toString(),),
+                            ReusableRow(title: 'geo-lng', value: data[index]['address']['geo']['lng'].toString(),),
                           ],
                         ),
                       );
