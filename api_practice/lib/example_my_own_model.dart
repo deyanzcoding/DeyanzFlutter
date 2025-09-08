@@ -12,7 +12,7 @@ class ExampleMyOwnModel extends StatefulWidget {
 class _ExampleMyOwnModelState extends State<ExampleMyOwnModel> {
 
   Future<MyOwnUserApi> getProductsApi () async {
-    final data = await 
+    final data = await  
   }
 
   @override
