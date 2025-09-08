@@ -41,14 +41,21 @@ class _ExampleMyOwnModelState extends State<ExampleMyOwnModel> {
                 future: getProductsApi(),
                   builder: (context, snapshot) {
                       return ListView.builder(
-                        // itemCount: snapshot.data!.data!.length,
+                        // itemCount: snapshot.data.data[index].images.length,
                         itemCount: 300,
                         itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              Text(index.toString()),
-                            ],
-                          );
+                          return
+                              Container(
+                                height: MediaQuery.of(context).size.height* .25,
+                                width: MediaQuery.of(context).size.height* .5,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(image: NetworkImage(''))
+                                ),
+                                child: ListView.builder(
+                                    itemBuilder: (context, index) {
+                                        
+                                    }),
+                              );
                         },
                       );
                   })
