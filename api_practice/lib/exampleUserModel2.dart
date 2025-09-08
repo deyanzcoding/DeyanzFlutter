@@ -11,7 +11,7 @@ class Exampleusermodel2 extends StatefulWidget {
 }
 
 class _Exampleusermodel2State extends State<Exampleusermodel2> {
-  List<dynamic> data = [];
+  var data;
 
   Future<void> getUserApi() async {
     final response = await http.get(
@@ -19,14 +19,12 @@ class _Exampleusermodel2State extends State<Exampleusermodel2> {
     );
 
     if (response.statusCode == 200) {
-      for (Map i in data) {
         data = jsonDecode(response.body.toString());
-      }
     } else {
 
     }
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +51,8 @@ class _Exampleusermodel2State extends State<Exampleusermodel2> {
                           children: [
                             ReusableRow(title: 'name', value: data[index]['name'].toString(),),
                             ReusableRow(title: 'username', value: data[index]['username'].toString(),),
+                            ReusableRow(title: 'street', value: data[index]['address']['street'].toString(),),
+                            ReusableRow(title: 'geo', value: data[index]['address']['geo'].toString(),),
                           ],
                         ),
                       );
