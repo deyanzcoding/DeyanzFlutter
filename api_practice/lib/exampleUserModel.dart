@@ -34,7 +34,7 @@ class _ExampleUserModelState extends State<ExampleUserModel> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('user GET api '),
+        title: Text('user GET apis '),
         centerTitle: true,
       ),
 
