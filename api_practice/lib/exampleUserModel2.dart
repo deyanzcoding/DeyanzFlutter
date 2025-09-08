@@ -49,10 +49,18 @@ class _Exampleusermodel2State extends State<Exampleusermodel2> {
                       return Card(
                         child: Column(
                           children: [
+                            ReusableRow(title: 'id', value: data[index]['id'].toString(),),
                             ReusableRow(title: 'name', value: data[index]['name'].toString(),),
                             ReusableRow(title: 'username', value: data[index]['username'].toString(),),
+                            ReusableRow(title: 'email', value: data[index]['email'].toString(),),
+                            SingleChildScrollView(scrollDirection: Axis.horizontal, child: ReusableRow(title: 'address', value: data[index]['address'].toString(),)),
                             ReusableRow(title: 'street', value: data[index]['address']['street'].toString(),),
+                            ReusableRow(title: 'suite', value: data[index]['address']['suite'].toString(),),
+                            ReusableRow(title: 'city', value: data[index]['address']['city'].toString(),),
+                            ReusableRow(title: 'zipcode', value: data[index]['address']['zipcode'].toString(),),
                             ReusableRow(title: 'geo', value: data[index]['address']['geo'].toString(),),
+                            ReusableRow(title: 'geo-lat', value: data[index]['address']['geo']['lat'].toString(),),
+                            ReusableRow(title: 'geo-lat', value: data[index]['address']['geo']['lat'].toString(),),
                           ],
                         ),
                       );
