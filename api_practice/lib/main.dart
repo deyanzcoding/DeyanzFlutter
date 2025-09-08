@@ -4,6 +4,8 @@ import 'package:api_practice/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'exampleUserModel2.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -24,7 +26,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
 
-      home: ExampleUserModel(),
+      home: Exampleusermodel2(),
     );
   }
 }
