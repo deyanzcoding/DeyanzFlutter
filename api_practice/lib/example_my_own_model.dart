@@ -1,5 +1,7 @@
 import 'package:/flutter/material.dart';
 
+import 'Models/myOwnUserApi.dart';
+
 class ExampleMyOwnModel extends StatefulWidget {
   const ExampleMyOwnModel({super.key});
 
@@ -8,6 +10,11 @@ class ExampleMyOwnModel extends StatefulWidget {
 }
 
 class _ExampleMyOwnModelState extends State<ExampleMyOwnModel> {
+
+  Future<MyOwnUserApi> getProductsApi () async {
+    final data = await 
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
