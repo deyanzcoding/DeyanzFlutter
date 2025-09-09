@@ -1,7 +1,6 @@
 import 'dart:convert';
-
+import 'package:api_practice/Models/post_models.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
 
 class Examplemodel extends StatefulWidget {
@@ -12,24 +11,20 @@ class Examplemodel extends StatefulWidget {
 }
 
 class _ExamplemodelState extends State<Examplemodel> {
-  List<Photos> photosList = [];
 
-  Future<List<Photos>> getPhotos() async {
-    final response = await http.get(
-      Uri.parse('https://jsonplaceholder.typicode.com/photos'),
-    );
-    var data = jsonDecode(response.body.toString());
+  List<PostsModel>? posts;
+  var isLoaded = false;
 
-    print(data);
-    if (response.statusCode == 200) {
-      for (Map i in data) {
-        Photos photos = Photos(title: i['title'], url: i['url'], id: i['id']);
-        photosList.add(photos);
-      }
-      return photosList;
-    } else {
-      return photosList;
-    }
+@override
+  void initState() {
+    // TODO: implement initState
+  super.initState();
+  // fetch data from API
+  getData();
+}
+
+  getData() async {
+  //post = wait,
   }
 
   @override
@@ -37,35 +32,17 @@ class _ExamplemodelState extends State<Examplemodel> {
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text('Api Practice')),
 
-      body: Expanded(
-        child: FutureBuilder(
-          future: getPhotos(),
-          builder: (context, AsyncSnapshot<List<Photos>> snapshot) {
-            return ListView.builder(
-              itemCount: photosList.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                      snapshot.data![index].url.toString(),
-                    ),
-                  ),
-                  subtitle: Text(snapshot.data![index].title.toString()),
-                  title: Text('Notes id:${snapshot.data![index].id}',
-                  ),
-                );
-              },
+      body: ListView.builder(
+        itemCount: 10,
+          itemBuilder:(context, index) {
+            return Container(
+              
+              child: Text('Hi'),
             );
-          },
-        ),
-      ),
+          }
+      )
+
+
     );
   }
-}
-
-class Photos {
-  String title, url;
-  int id;
-
-  Photos({required this.id, required this.title, required this.url});
 }
