@@ -1,9 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-
-import 'Models/myOwnUserApi.dart';
 
 class ExampleMyOwnModel extends StatefulWidget {
   const ExampleMyOwnModel({super.key});
@@ -13,55 +8,14 @@ class ExampleMyOwnModel extends StatefulWidget {
 }
 
 class _ExampleMyOwnModelState extends State<ExampleMyOwnModel> {
-
-  Future<MyOwnUserApi> getProductsApi () async {
-    final response = await http.get(Uri.parse('https://webhook.site/084ee7eb-9208-4972-915c-176ef8295700'));
-        var data = jsonDecode(response.body.toString());
-
-        if(response.statusCode == 200) {
-          return MyOwnUserApi.fromJson(json);
-        } else {
-          return MyOwnUserApi.fromJson(json);
-        }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('My rest api project'),
         centerTitle: true,
-        backgroundColor: Colors.orangeAccent,
-        title: Text('My Own Model'),
-      ),
-
-      body: Column(
-        children: [
-          Expanded(
-              child: FutureBuilder<MyOwnUserApi>(
-                future: getProductsApi(),
-                  builder: (context, snapshot) {
-                      return ListView.builder(
-                        // itemCount: snapshot.data.data[index].images.length,
-                        itemCount: 300,
-                        itemBuilder: (context, index) {
-                          return
-                              Container(
-                                height: MediaQuery.of(context).size.height* .25,
-                                width: MediaQuery.of(context).size.height* .5,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(image: NetworkImage(''))
-                                ),
-                                child: ListView.builder(
-                                    itemBuilder: (context, index) {
-                                        
-                                    }),
-                              );
-                        },
-                      );
-                  })
-
-          )
-        ],
+        backgroundColor: Colors.red,
+        
       ),
     );
   }
