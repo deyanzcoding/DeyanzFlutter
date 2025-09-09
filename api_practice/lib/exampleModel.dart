@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:api_practice/Models/post_models.dart';
+import 'package:api_practice/services/remote_services.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -25,6 +26,12 @@ class _ExamplemodelState extends State<Examplemodel> {
 
   getData() async {
   //post = wait,
+    posts = await RemoteService().getPosts();
+    if(posts != null) {
+      setState(() {
+        isLoaded = true;
+      });
+    }
   }
 
   @override
@@ -33,7 +40,7 @@ class _ExamplemodelState extends State<Examplemodel> {
       appBar: AppBar(centerTitle: true, title: Text('Api Practice')),
 
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: posts?.length,
           itemBuilder:(context, index) {
             return Container(
               
