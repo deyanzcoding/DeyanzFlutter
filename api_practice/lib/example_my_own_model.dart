@@ -1,5 +1,6 @@
 import 'package:api_practice/Models/myOwnUserApi.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class ExampleMyOwnModel extends StatefulWidget {
   const ExampleMyOwnModel({super.key});
@@ -9,7 +10,8 @@ class ExampleMyOwnModel extends StatefulWidget {
 }
 
 Future<MyOwnUserApi> getUserApi() async {
-  final response = await 
+  final response = await http.get(Uri.parse('	https://webhook.site/084ee7eb-9208-4972-915c-176ef8295700'));
+  
 }
 
 class _ExampleMyOwnModelState extends State<ExampleMyOwnModel> {
