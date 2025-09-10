@@ -1,11 +1,11 @@
-import 'package:api_practice/exampleModel.dart';
-import 'package:api_practice/exampleUserModel.dart';
-import 'package:api_practice/example_my_own_model.dart';
-import 'package:api_practice/home_screen.dart';
+import 'package:api_practice/getApi/exampleModel.dart';
+import 'package:api_practice/getApi/exampleUserModel.dart';
+import 'package:api_practice/getApi/example_my_own_model.dart';
+import 'package:api_practice/getApi/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'exampleUserModel2.dart';
+import 'getApi/exampleUserModel2.dart';
 
 void main() {
   runApp(MyApp());
