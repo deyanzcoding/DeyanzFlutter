@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 
 class Signup extends StatefulWidget {
@@ -12,6 +13,21 @@ class _SignupState extends State<Signup> {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  void login(String email, password) {
+
+    try{
+      Response response = await post(
+        Uri.parse('https://reqres.in/reqres-free-v1'),
+        body: {
+          'email' : emailController,
+          'password' : passwordController,
+        }
+      );
+    } catch {
+      print(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
