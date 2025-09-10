@@ -2,6 +2,7 @@ import 'package:api_practice/getApi/exampleModel.dart';
 import 'package:api_practice/getApi/exampleUserModel.dart';
 import 'package:api_practice/getApi/example_my_own_model.dart';
 import 'package:api_practice/getApi/home_screen.dart';
+import 'package:api_practice/postApi/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -27,7 +28,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
 
-      home: ExampleMyOwnModel(),
+      home: Signup(),
     );
   }
 }
