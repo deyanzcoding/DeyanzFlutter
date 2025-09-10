@@ -9,7 +9,7 @@ class RemoteService {
     var response = await client.get(uri);
     if(response.statusCode == 200) {
       var json = response.body;
-       return postFromJson(json);
+       // return PostsModel.fromJson(json);
     } else {
 
     }
